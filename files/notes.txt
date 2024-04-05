@@ -1,0 +1,57 @@
+
+
+Things to save in a struct:
+
+	s_game
+	- s_map
+	- s_player
+	- s_mlx
+	- s_enemies
+
+	s_enemies
+	- s_enemy[] s_enemies
+
+	s_enemy
+	- s_pos
+
+	s_map
+	- map
+	- # collectibles
+	- exit coord
+	- init player pos
+
+	s_player
+	- player coord
+	- # current collectibles
+	- # movements
+
+	s_coord
+	- int x
+	- int y
+
+	s_mlx
+	- (void *)mlx
+	- (void *)mlx_win
+	- min 5 sprites (Wall, Player, Empty space, Collectible, Exit) -> Game: Kirby's Dreamland Wii 2011n
+			- star OK
+			- life icon OK
+			- wall (tree)
+			- grass
+			- kirby facing left
+			- kirby facing right
+			- kirby facing front
+			- kirby facing back
+			- waddle dee facing left
+			- waddle dee facing right
+			- waddle dee facing front
+			- waddle dee facing back
+			- closed door
+			- opened door
+
+
+THINGS TO DO:
+	- map parse --> DONE
+	- 
+	- print num moves player on the terminal
+	- check seg fault when closing or ending
+	-  check leaks

@@ -6,12 +6,17 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 08:49:55 by ele               #+#    #+#             */
-/*   Updated: 2024/04/04 11:56:35 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/06 04:27:55 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
+/** @brief Initializes the enemies
+ * 
+ *  @param game game structure
+ *  @param n number of enemies
+*/
 void    init_enemies(t_game *game, int n)
 {
     int     i;
@@ -38,6 +43,9 @@ void    init_enemies(t_game *game, int n)
     }
 }
 
+/**
+ * 
+*/
 void print_enemies(t_game *game, t_pos pos)
 {
 	int i;

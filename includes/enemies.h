@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enemies.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 07:58:29 by ele               #+#    #+#             */
-/*   Updated: 2024/04/08 22:18:55 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/09 20:36:57 by elena            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,13 @@
 
 # include "position.h"
 
+/* ************************************************************************** */
+/*                 DATA TYPES DEFINITIONS                                     */
+/* ************************************************************************** */
+
 /** @brief List of enemies
 */
-typedef t_pos *t_enemy_arr;
+typedef t_pos	*t_enemy_arr;
 
 /** @brief Enemies structure
  * 
@@ -26,8 +30,8 @@ typedef t_pos *t_enemy_arr;
 */
 typedef struct s_enemies
 {
-    t_enemy_arr   enemies;
-    int         n_enemies;
-}               t_enemies;
+	t_enemy_arr	enemies;
+	int			n_enemies;
+}				t_enemies;
 
 #endif

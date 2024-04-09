@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:49:35 by elena             #+#    #+#             */
-/*   Updated: 2024/04/09 08:54:22 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/09 20:40:21 by elena            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 # include "map.h"
 # include "mlx_info.h"
 # include "enemies.h"
+
+/* ************************************************************************** */
+/*                 DATA TYPES DEFINITIONS                                     */
+/* ************************************************************************** */
 
 /** @brief Game structure
  * 
@@ -47,7 +51,11 @@ typedef struct s_game
 	int			render;
 }				t_game;
 
-// INITIALIZE
+/* ************************************************************************** */
+/*                 FUNTIONS DEFINITIONS                                       */
+/* ************************************************************************** */
+
+/* -------------- INITIALIZE -------------- */		
 
 /** @brief Initializes the sprites structure
  * 
@@ -70,7 +78,7 @@ void		init_enemies(t_game *game, int n);
 */
 void		get_game_info(t_game *game);
 
-// PRINT
+/* -------------- PRINT -------------- */
 
 /** @brief Prints the objects of the game
  * 
@@ -107,7 +115,7 @@ void		print_header(t_game *game);
 */
 void		print_end_screen(t_game *game, char *text);
 
-// MOVEMENT
+/* -------------- MOVEMENT -------------- */
 
 /** @brief Moves the player
  * 
@@ -127,9 +135,9 @@ void		perform_move(t_game *game, t_pos aux);
  * 
  *  @param game game structure
 */
-void   		move_enemies(t_game *game);
+void		move_enemies(t_game *game);
 
-// GAME
+/* -------------- GAME -------------- */
 
 /** @brief Handles the keyboard input
  * 
@@ -154,7 +162,7 @@ void		open_window(t_game *game);
 */
 int			play_game(t_game *game);
 
-// UTILS
+/* -------------- UTILS -------------- */
 
 /** @brief Checks whether a position is within map limits
  * 
@@ -170,6 +178,6 @@ int			in_board(t_game game, t_pos pos);
  * 
  *  @param game game structure
 */
-void    	reset_game(t_game *game);
+void		reset_game(t_game *game);
 
 #endif

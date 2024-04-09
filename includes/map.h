@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:07:15 by elena             #+#    #+#             */
-/*   Updated: 2024/04/08 23:31:59 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/09 20:41:32 by elena            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 # include "player.h"
 
 # define VALID_CHARS "01PCEX\0"
+
+/* ************************************************************************** */
+/*                 DATA TYPES DEFINITIONS                                     */
+/* ************************************************************************** */
 
 /** @brief Map structure
  * 
@@ -36,6 +40,10 @@ typedef struct s_map
 	t_pos	init_coord;
 }			t_map;
 
+/* ************************************************************************** */
+/*                 FUNCTIONS DEFINITIONS                                      */
+/* ************************************************************************** */
+
 /** @brief Reads the map
  * 
  *  @param file_name file name
@@ -53,7 +61,7 @@ char	**read_map(char *file_name);
 */
 int		check_map(char **map);
 
-// MAP VALIDITY
+/* -------------- MAP VALIDITY -------------- */
 
 /** @brief Checks whether the map is rectangular
  * 

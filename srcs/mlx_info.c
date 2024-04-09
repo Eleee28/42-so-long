@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_info.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 10:17:43 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/04/09 09:46:11 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/09 11:37:02 by elena            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int	exit_window(t_mlx_data *data)
 
 int	handle_input(int keycode, t_game *game)
 {
-	//ft_printf("Keycode: %d\n", keycode);
+	ft_printf("Keycode: %d\n", keycode);
 	if (keycode == KEY_ESC)
 		exit_window(&game->mlx.mlx_data);
-	else if (keycode == KEY_R)
-		reset_game(game);
+	//else if (keycode == KEY_R)
+		//reset_game(game);
 	else 
 		move_player(game, keycode);
 	return (0);
@@ -36,6 +36,9 @@ t_sprites   init_sprites(t_game *game)
 	t_sprites sprites;
 	int h;
 	int w;
+
+	// sprites.blue = mlx_png_file_to_image(game->mlx.mlx_data.mlx_ptr, "textures/images_v2/blue_32.png", &w, &h);
+	
 	
 	sprites.black = mlx_xpm_file_to_image(&game->mlx.mlx_data.mlx_ptr, BLACK, &w, &h);
 	if (!sprites.black)
@@ -52,6 +55,8 @@ t_sprites   init_sprites(t_game *game)
 	sprites.coin.on = mlx_xpm_file_to_image(&game->mlx.mlx_data.mlx_ptr, COIN_ON, &w, &h);
 	sprites.player.down = mlx_xpm_file_to_image(&game->mlx.mlx_data.mlx_ptr, KIRBY_NORMAL, &w, &h);
 	sprites.enemy.down = mlx_xpm_file_to_image(&game->mlx.mlx_data.mlx_ptr, ENEMY_NORMAL, &w, &h);
+
+	
 	//sprites.player.left = ;
 	//sprites.player.right = ;
 	//sprites.player.up = ;

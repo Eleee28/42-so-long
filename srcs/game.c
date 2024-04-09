@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:49:12 by elena             #+#    #+#             */
-/*   Updated: 2024/04/09 08:59:20 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/09 10:26:44 by elena            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,13 @@ void	get_game_info(t_game *game)
 	game->enemies.n_enemies = count_objects(game->map.map, 'X');
 	game->render = 1;
 	init_enemies(game, game->enemies.n_enemies);
-	ft_printf("Before 1st dup_matrix:\n");
-	ft_printf("------INIT_MAP-----\n");
-    ft_print_matrix(game->map.init_map);
-    ft_printf("------MAP-----\n");
-    ft_print_matrix(game->map.map);
+	//ft_printf("Before 1st dup_matrix:\n");
+    //ft_printf("------MAP-----\n");
+    //ft_print_matrix(game->map.map);
 	game->map.init_map = ft_dup_matrix(game->map.map);
+	//ft_printf("------INIT_MAP-----\n");
+    //ft_print_matrix(game->map.init_map);
+	//ft_printf("EXITING GET_GAME_INFO\n");
 	if (!game->map.init_map)
 		print_error("Error using malloc");
 }
@@ -114,8 +115,8 @@ int print_game(t_game *game)
 		c = 0;
 		while (c < game->map_w)
 		{
-	
-			print_obj(game, (t_pos){r, c});
+			mlx_put_image_to_window(game->mlx.mlx_data.mlx_ptr, game->mlx.mlx_data.mlx_win, game->mlx.sprites.blue, c * IMG_W, r * IMG_H);
+			//print_obj(game, (t_pos){r, c});
 			c++;
 		}
 		r++;

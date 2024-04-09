@@ -6,7 +6,7 @@
 /*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 10:17:43 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/04/09 11:37:02 by elena            ###   ########.fr       */
+/*   Updated: 2024/04/09 22:32:20 by elena            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,6 @@ t_sprites   init_sprites(t_game *game)
 	t_sprites sprites;
 	int h;
 	int w;
-
-	// sprites.blue = mlx_png_file_to_image(game->mlx.mlx_data.mlx_ptr, "textures/images_v2/blue_32.png", &w, &h);
-	
 	
 	sprites.black = mlx_xpm_file_to_image(&game->mlx.mlx_data.mlx_ptr, BLACK, &w, &h);
 	if (!sprites.black)
@@ -60,16 +57,15 @@ t_sprites   init_sprites(t_game *game)
 	//sprites.player.left = ;
 	//sprites.player.right = ;
 	//sprites.player.up = ;
-	/*
-	if (!sprites.grass || !sprites.tree || !sprites.exit
-		|| !sprites.coin.on || !sprites.player.down)
+	
+	if (!sprites.grass || !sprites.tree || !sprites.exit.close || !sprites.exit.open || !sprites.life || !sprites.coin.on || !sprites.player.down || !sprites.enemy.down)
 	{
-		ft_free_matrix(game->map.map);
+		//ft_free_matrix(game->map.map);
 		mlx_destroy_window(game->mlx.mlx_data.mlx_ptr, game->mlx.mlx_data.mlx_win);
-		free(game->mlx.mlx_data.mlx_ptr);
-		print_error("Not sprite found");
+		//free(game->mlx.mlx_data.mlx_ptr);
+		print_error("Not sprite found\n");
 	}
-	*/
+	
 	return (sprites);
 }
 

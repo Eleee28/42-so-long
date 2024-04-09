@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:49:12 by elena             #+#    #+#             */
-/*   Updated: 2024/04/05 21:36:36 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/09 08:59:20 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	get_game_info(t_game *game)
 	game->screen_w = game->map_w * IMG_W;
 	game->screen_h = game->map_h * IMG_H;
 	game->enemies.n_enemies = count_objects(game->map.map, 'X');
+	game->render = 1;
 	init_enemies(game, game->enemies.n_enemies);
 	ft_printf("Before 1st dup_matrix:\n");
 	ft_printf("------INIT_MAP-----\n");
@@ -81,6 +82,8 @@ void	get_game_info(t_game *game)
 
 int play_game(t_game *game)
 {
+	if (game->render == 0 || !game->map.map)
+		return 0;
 	game->frames++;
 	if (game->player.life <= 0)
 		print_end_screen(game, "Game Over!");

@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 10:17:43 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/04/06 00:55:56 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/09 09:46:11 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 int	exit_window(t_mlx_data *data)
 {
 	mlx_destroy_window(data->mlx_ptr, data->mlx_win);
-	free(data->mlx_ptr);
 	exit(0);
-	return (0);
 }
 
 
@@ -26,8 +24,8 @@ int	handle_input(int keycode, t_game *game)
 	//ft_printf("Keycode: %d\n", keycode);
 	if (keycode == KEY_ESC)
 		exit_window(&game->mlx.mlx_data);
-	/*else if (keycode == KEY_R)
-		reset_game(game);*/
+	else if (keycode == KEY_R)
+		reset_game(game);
 	else 
 		move_player(game, keycode);
 	return (0);

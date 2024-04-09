@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ele <ele@student.42.fr>                    +#+  +:+       +#+         #
+#    By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 15:16:19 by elena             #+#    #+#              #
-#    Updated: 2024/04/04 15:44:42 by ele              ###   ########.fr        #
+#    Updated: 2024/04/09 08:35:49 by ejuarros         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,18 @@ SRC_DIR = srcs
 
 LIBFT_DIR = library
 
-MLX_DIR = mlx
-# MLX_DIR = mlx_linux
+OS = $(shell uname -s)
+
+ifeq ($(OS), Linux)
+	MLX_DIR = mlx_linux
+	MLX_FLAGS = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+endif
+
+ifeq ($(OS), Darwin)
+	MLX_DIR = mlx
+	MLX_FLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
+endif
+
 
 CC = cc
 
@@ -49,10 +59,10 @@ REMOVE = rm -f
 
 LIB = ar -crs
 
-INCLUDE = -Ilibrary -Imlx #-Imlx_linux
+INCLUDE = -Ilibrary
 
-MLX_FLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
-# MLX_FLAGS = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+
+
 
 # SOURCES
 

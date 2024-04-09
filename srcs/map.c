@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 15:47:08 by elena             #+#    #+#             */
-/*   Updated: 2024/04/06 00:55:24 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/09 08:59:03 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,26 +62,34 @@ int check_map(char **map)
     return (1);
 }
 
-/*
+
 void    reset_game(t_game *game)
 {
-    (void)game;
-    ft_printf("Reset\n");
-    ft_free_matrix(game->map.map);
+    game->render = 0;
+    usleep(1000);
+    //ft_printf("Reset\n");
+
+    char **map = game->map.map;
+    // ft_free_matrix(game->map.map);
+    game->map.map = NULL;
+    ft_free_matrix(map);
+
     //ft_printf("------INIT_MAP-----\n");
     //ft_print_matrix(game->map.init_map);
     //ft_printf("------MAP-----\n");
     //ft_print_matrix(game->map.map);
-    game->map.map = ft_dup_matrix(game->map.init_map);
-    if (!game->map.map)
+    map = ft_dup_matrix(game->map.init_map);
+    if (!map)
         print_error("Error using malloc");
+    game->map.map = map;
     //ft_print_matrix(game->map.map);
     //ft_printf("Hello\n");
     //free(game->enemies.enemies);
-    //init_enemies(game, game->enemies.n_enemies);
+    init_enemies(game, game->enemies.n_enemies);
     game->frames = 0;
     game->player.collec = 0;
     game->player.life = 1;
     game->player.coord = game->map.init_coord;
     game->player.moves = 0;
-}*/
+    game->render = 1;
+}

@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:49:35 by elena             #+#    #+#             */
-/*   Updated: 2024/04/08 23:23:46 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/09 08:54:22 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ typedef struct s_game
 	int			screen_w;
 	int			screen_h;
 	int			frames;
+
+	int			render;
 }				t_game;
 
 // INITIALIZE

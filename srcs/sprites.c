@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:07:08 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/04/10 11:48:20 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:35:17 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ void init_collec_sprites(t_game *game, t_sprites *sprites)
     int h;
     
     sprites->collec1 = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
-        COIN_ON, &w, &h);
-    /*sprites->collec2 = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
-        COIN_OFF, &w, &h);*/
-    if (!sprites->collec1 /*|| !sprites->collec2*/)
+        COLL1, &w, &h);
+    sprites->collec2 = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
+        COLL2, &w, &h);
+    if (!sprites->collec1 || !sprites->collec2)
     {
         ft_free_matrix(game->map.map);
         mlx_destroy_window(game->mlx.mlx_data.mlx_ptr, game->mlx.mlx_data.mlx_win);

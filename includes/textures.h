@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:12:09 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/04/10 11:31:10 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:34:48 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@
 
 /* -------------- TREE SPRITES -------------- */
 
-# define TREE "textures/tree.xpm"
-# define TREE1 "textures/tree/Tree_2-1.xpm"
-# define TREE2 "textures/tree/Tree_2-2.xpm"
-# define TREE3 "textures/tree/Tree_2-3.xpm"
-# define TREE4 "textures/tree/Tree_2-4.xpm"
+//# define TREE "textures/tree.xpm"
+# define TREE1 "textures/tree/t1.xpm"
+# define TREE2 "textures/tree/t2.xpm"
+# define TREE3 "textures/tree/t3.xpm"
+# define TREE4 "textures/tree/t4.xpm"
 
 /* -------------- DOOR SPRITES -------------- */
 
@@ -44,7 +44,8 @@
 
 /* -------------- COLLECTIBLES SPRITES -------------- */
 
-# define COIN_ON "textures/collectible/star_18.xpm"
+# define COLL1 "textures/collectible/star1.xpm"
+# define COLL2 "textures/collectible/star2.xpm"
 
 /* -------------- PLAYER SPRITES -------------- */
 

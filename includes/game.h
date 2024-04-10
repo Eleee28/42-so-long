@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:49:35 by elena             #+#    #+#             */
-/*   Updated: 2024/04/10 11:48:09 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:37:44 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,5 +213,9 @@ void init_enemy_sprites(t_game *game, t_sprites *sprites);
 void init_extra_sprites(t_game *game, t_sprites *sprites);
 
 void init_player_sprites(t_game *game, t_sprites *sprites);
+
+void    put_tree_sprite(t_game *game, t_pos pos);
+
+void    put_collec_sprite(t_game *game, t_pos pos);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 15:16:19 by elena             #+#    #+#              #
-#    Updated: 2024/04/10 11:46:30 by ejuarros         ###   ########.fr        #
+#    Updated: 2024/04/10 15:10:58 by ejuarros         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,8 @@ SRCS =	$(SRC_DIR)/main.c \
 		$(SRC_DIR)/print_game_utils.c \
 		\
 		$(SRC_DIR)/sprites.c \
-		$(SRC_DIR)/sprites2.c
+		$(SRC_DIR)/sprites2.c \
+		$(SRC_DIR)/print_sprites.c
 
 OBJS = $(SRCS:.c=.o)
 

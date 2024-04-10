@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 16:06:53 by ele               #+#    #+#             */
-/*   Updated: 2024/04/10 11:47:34 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:35:54 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,8 @@ void	print_obj(t_game *game, t_pos pos)
 		mlx_put_image_to_window(ptr, win, game->mlx.sprites.player.down,
 			(pos.y * IMG_W) + 2, ((pos.x + 1) * IMG_H) + 5);
 	else if (game->map.map[pos.x][pos.y] == '1')
-		mlx_put_image_to_window(ptr, win, game->mlx.sprites.tree1,
-			pos.y * IMG_W, (pos.x + 1) * IMG_H);
+		put_tree_sprite(game, pos);
 	else if (game->map.map[pos.x][pos.y] == 'C')
-		mlx_put_image_to_window(ptr, win, game->mlx.sprites.collec1,
-			(pos.y * IMG_W) + 6, ((pos.x + 1) * IMG_H) + 6);
+		put_collec_sprite(game, pos);
 	print_enemies(game, pos);
 }

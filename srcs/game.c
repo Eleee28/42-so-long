@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:49:12 by elena             #+#    #+#             */
-/*   Updated: 2024/04/10 11:02:31 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:19:37 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	play_game(t_game *game)
 		print_end_screen(game, "You Win!");
 	else
 	{
-		if (game->frames == 50)
+		if (game->frames == 100)
 		{
 			game->frames = 0;
 			move_enemies(game);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+         #
+#    By: elena <elena@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 15:16:19 by elena             #+#    #+#              #
-#    Updated: 2024/04/09 08:35:49 by ejuarros         ###   ########.fr        #
+#    Updated: 2024/04/10 08:54:05 by elena            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,16 +53,13 @@ endif
 
 CC = cc
 
-CFLAGS += -Wall -Werror -Wextra
+CFLAGS += -Wall -Werror -Wextra -g3
 
 REMOVE = rm -f
 
 LIB = ar -crs
 
 INCLUDE = -Ilibrary
-
-
-
 
 # SOURCES
 
@@ -142,5 +139,12 @@ re: fclean
 	@echo " "
 	@echo "$(GREEN)Cleaned everything for so long!$(DEFAULT)"
 	@$(MAKE) all
+
+play: 
+	./$(NAME) files/small_map.ber
+	./$(NAME) files/big_map.ber
+	./$(NAME) files/collec_after_exit.ber
+	./$(NAME) files/with_enemies.ber
+	
 
 .PHONY: all clean fclean re

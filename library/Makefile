@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+         #
+#    By: elena <elena@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 11:34:16 by ejuarros          #+#    #+#              #
-#    Updated: 2024/04/04 16:09:44 by ejuarros         ###   ########.fr        #
+#    Updated: 2024/04/10 08:30:46 by elena            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ LIB = ar -crs
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g3
 
 all: $(NAME)
 #	@echo $(BLUE) $(BOLD)"Library built successfully\n"$(CLEAR)

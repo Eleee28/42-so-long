@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 15:47:08 by elena             #+#    #+#             */
-/*   Updated: 2024/04/09 08:59:03 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/04/10 08:41:17 by elena            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char    **read_map(char *file_name)
     int     fd;
     
     fd = open(file_name, O_RDONLY);
+    if (fd < 0)
+        print_error("Couldn't open the file\n");
     line = get_next_line(fd);
     map = NULL;
     while (line)
@@ -66,25 +68,28 @@ int check_map(char **map)
 void    reset_game(t_game *game)
 {
     game->render = 0;
-    usleep(1000);
+    //usleep(1000);
     //ft_printf("Reset\n");
 
-    char **map = game->map.map;
-    // ft_free_matrix(game->map.map);
-    game->map.map = NULL;
-    ft_free_matrix(map);
+    //char **map = game->map.map;
+    
+    ft_free_matrix(game->map.map);
+    
+    //game->map.map = NULL;
+    //ft_free_matrix(map);
 
     //ft_printf("------INIT_MAP-----\n");
     //ft_print_matrix(game->map.init_map);
     //ft_printf("------MAP-----\n");
     //ft_print_matrix(game->map.map);
-    map = ft_dup_matrix(game->map.init_map);
-    if (!map)
+    game->map.map = ft_dup_matrix(game->map.init_map);
+    if (!game->map.map)
         print_error("Error using malloc");
-    game->map.map = map;
+    //game->map.map = map;
     //ft_print_matrix(game->map.map);
     //ft_printf("Hello\n");
-    //free(game->enemies.enemies);
+    if (game->enemies.enemies)
+        free(game->enemies.enemies);
     init_enemies(game, game->enemies.n_enemies);
     game->frames = 0;
     game->player.collec = 0;

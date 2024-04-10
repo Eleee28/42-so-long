@@ -6,7 +6,7 @@
 /*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 09:49:38 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/04/09 20:42:55 by elena            ###   ########.fr       */
+/*   Updated: 2024/04/10 08:15:05 by elena            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@
 #  define KEY_RIGHT 65363
 
 #  define KEY_ESC 65307
-#  define KEY_R
+#  define KEY_R 114
 #  define CLOSEBUTTON 33
 #  define CLOSEBUTTONMASK 0
 

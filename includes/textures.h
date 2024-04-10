@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:12:09 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/04/09 20:49:13 by elena            ###   ########.fr       */
+/*   Updated: 2024/04/10 11:31:10 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,47 @@
 /*                 MACROS DEFINITIONS                                         */
 /* ************************************************************************** */
 
+/* -------------- SCREEN DIMENSIONS -------------- */
+
 # define IMG_W 32
 # define IMG_H 32
 
-# define BLACK "textures/black_32.xpm"
-# define BLUE "textures/blue_32.xpm"
+/* -------------- BACKGROUND IMGS -------------- */
 
-# define GRASS "textures/grass_32.xpm"
+# define BLACK "textures/background/black_32.xpm"
+# define BLUE "textures/background/blue_32.xpm"
+
+# define GRASS "textures/background/grass_32.xpm"
+
+/* -------------- TREE SPRITES -------------- */
+
 # define TREE "textures/tree.xpm"
+# define TREE1 "textures/tree/Tree_2-1.xpm"
+# define TREE2 "textures/tree/Tree_2-2.xpm"
+# define TREE3 "textures/tree/Tree_2-3.xpm"
+# define TREE4 "textures/tree/Tree_2-4.xpm"
 
-# define DOOR_CLOSE "textures/door_close_32.xpm"
-# define DOOR_OPEN "textures/door_open_32.xpm"
+/* -------------- DOOR SPRITES -------------- */
 
-# define LIFE "textures/life_18.xpm"
-//# define COIN_OFF_PATH "textures/star_18.xpm"
-# define COIN_ON "textures/star_18.xpm"
+# define DOOR_CLOSE "textures/door/door_close_32.xpm"
+# define DOOR_OPEN "textures/door/door_open_32.xpm"
+
+/* -------------- COLLECTIBLES SPRITES -------------- */
+
+# define COIN_ON "textures/collectible/star_18.xpm"
+
+/* -------------- PLAYER SPRITES -------------- */
 
 # define KIRBY_NORMAL "textures/kirby_normal.xpm"
 
+/* -------------- ENEMY SPRITES -------------- */
+
 # define ENEMY_NORMAL "textures/exit.xpm"
+
+/* -------------- EXTRA SPRITES -------------- */
+
+# define LIFE "textures/extra/life_18.xpm"
+//# define COIN_OFF_PATH "textures/star_18.xpm"
 
 /* ************************************************************************** */
 /*                 DATA STRUCTURES DEFINITIONS                                */
@@ -56,28 +78,6 @@ typedef struct s_charac_sp
 	void	*right;
 }			t_charac_sp;
 
-/** @brief Collectible structure
- * 
- *  @param on on sprite
- *  @param off off sprite (for animations)
-*/
-typedef struct s_coin_sp
-{
-	void	*on;
-	void	*off;
-}			t_coin_sp;
-
-/** @brief Exit structure
- * 
- *  @param open open door sprite
- *  @param close close door sprite
-*/
-typedef struct s_exit_sp
-{
-	void	*open;
-	void	*close;
-}			t_exit_sp;
-
 /** @brief Sprites structure
  * 
  *  @param black black background sprite
@@ -95,12 +95,23 @@ typedef struct s_sprites
 	void		*black;
 	void		*blue;
 	void		*grass;
-	void		*tree;
-	t_exit_sp	exit;
-	void		*life;
-	t_coin_sp	coin;
+	
+	void		*tree1;
+	void		*tree2;
+	void		*tree3;
+	void		*tree4;
+	
+	void		*collec1;
+	void		*collec2;
+	
+	void		*exit_open;
+	void		*exit_closed;
+	
 	t_charac_sp	player;
 	t_charac_sp	enemy;
+	
+	void		*life;
+
 }				t_sprites;
 
 #endif

@@ -3,96 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   game_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/24 16:06:53 by ele               #+#    #+#             */
-/*   Updated: 2024/04/09 22:27:58 by elena            ###   ########.fr       */
+/*   Created: 2024/04/10 10:56:47 by elena             #+#    #+#             */
+/*   Updated: 2024/04/10 10:58:47 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-/** @brief Creates the messages to print on the screen for each frame
- * 
- *  @param game game structure
- *  @param life string to store the life message
- *  @param coll string to store the collectibles message
- *  @param mov string to store the moves message
-*/
-static void	create_messages(t_game *game, char **life, char **coll, char **mov)
+void	get_game_info(t_game *game)
 {
-	char	*aux;
-
-	aux = ft_itoa(game->player.life);
-	*life = ft_strjoin("x0", aux);
-	free(aux);
-	aux = ft_itoa(game->player.collec);
-	*mov = ft_strjoin(aux, "/");
-	free(aux);
-	aux = ft_itoa(game->map.n_collec);
-	*coll = ft_strjoin(*mov, aux);
-	free(*mov);
-	free(aux);
-	aux = ft_itoa(game->player.moves);
-	*mov = ft_strjoin(" |  Movements: ", aux);
-	free(aux);
-}
-
-static void	put_info(t_game *game, char *life, char *collec, char *moves)
-{
-	int		i;
-	void	*ptr;
-	void	*win;
-	int		color;
-
-	i = 0;
-	ptr = game->mlx.mlx_data.mlx_ptr;
-	win = game->mlx.mlx_data.mlx_win;
-	while (i < game->map_w)
-	{
-		mlx_put_image_to_window(ptr, win, game->mlx.sprites.blue, i * IMG_W, 0);
-		i++;
-	}
-	color = mlx_get_color_value(ptr, 0x00FFFFFF);
-	mlx_put_image_to_window(ptr, win, game->mlx.sprites.life, 6, 6);
-	mlx_string_put(ptr, win, 25, 20, color, life);
-	mlx_put_image_to_window(ptr, win, game->mlx.sprites.coin.on, 55, 6);
-	mlx_string_put(ptr, win, 75, 20, color, collec);
-	mlx_string_put(ptr, win, 100, 20, color, moves);
-}
-
-/**
- *  @details Uses strings to store the text to print. Clears the banner and 
- *  puts the corresponding information
-*/
-void	print_header(t_game *game)
-{
-	char	*collec;
-	char	*moves;
-	char	*life;
-
-	collec = 0;
-	moves = 0;
-	life = 0;
-	create_messages(game, &life, &collec, &moves);
-	put_info(game, life, collec, moves);
-	free(life);
-	free(moves);
-	free(collec);
-}
-
-void	print_end_screen(t_game *game, char *text)
-{
-	void				*ptr;
-	void				*win;
-	unsigned int		color;
-
-	ptr = game->mlx.mlx_data.mlx_ptr;
-	win = game->mlx.mlx_data.mlx_win;
-	color = mlx_get_color_value(ptr, 0x00FFFFFF);
-	mlx_clear_window(ptr, win);
-	mlx_string_put(ptr, win, ((game->map_w / 2) - 1) * IMG_H,
-		(game->map_h / 2) * IMG_W, color, text);
-	mlx_string_put(ptr, win, ((game->map_w / 2) - 2) * IMG_H,
-		((game->map_h / 2) + 1) * IMG_W, color, "Press [R] to reset");
+	game->frames = 0;
+	game->player.collec = 0;
+	game->player.moves = 0;
+	game->player.life = 1;
+	game->player.coord = find_object(game->map.map, 'P');
+	game->map.init_coord = game->player.coord;
+	game->map.exit_coord = find_object(game->map.map, 'E');
+	game->map.n_collec = count_objects(game->map.map, 'C');
+	game->map_w = ft_strlen(game->map.map[0]);
+	game->map_h = ft_len_matrix(game->map.map);
+	game->screen_w = game->map_w * IMG_W;
+	game->screen_h = game->map_h * IMG_H;
+	game->enemies.n_enemies = count_objects(game->map.map, 'X');
+	game->render = 1;
+	init_enemies(game, game->enemies.n_enemies);
+	game->map.init_map = ft_dup_matrix(game->map.map);
+	if (!game->map.init_map)
+		print_error("Error using malloc");
 }

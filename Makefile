@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: elena <elena@student.42.fr>                +#+  +:+       +#+         #
+#    By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 15:16:19 by elena             #+#    #+#              #
-#    Updated: 2024/04/10 08:54:05 by elena            ###   ########.fr        #
+#    Updated: 2024/04/10 11:46:30 by ejuarros         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,16 +64,27 @@ INCLUDE = -Ilibrary
 # SOURCES
 
 SRCS =	$(SRC_DIR)/main.c \
+		\
 		$(SRC_DIR)/error.c \
+		\
 		$(SRC_DIR)/map.c	\
 		$(SRC_DIR)/map_utils.c	\
 		$(SRC_DIR)/map_utils2.c	\
+		\
 		$(SRC_DIR)/game.c	\
+		$(SRC_DIR)/game_utils.c	\
+		\
 		$(SRC_DIR)/mlx_info.c	\
+		\
 		$(SRC_DIR)/position.c	\
 		$(SRC_DIR)/player.c	\
-		$(SRC_DIR)/game_utils.c \
-		$(SRC_DIR)/enemies.c
+		$(SRC_DIR)/enemies.c \
+		\
+		$(SRC_DIR)/print_game.c \
+		$(SRC_DIR)/print_game_utils.c \
+		\
+		$(SRC_DIR)/sprites.c \
+		$(SRC_DIR)/sprites2.c
 
 OBJS = $(SRCS:.c=.o)
 

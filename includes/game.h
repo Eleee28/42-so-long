@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:49:35 by elena             #+#    #+#             */
-/*   Updated: 2024/04/09 20:40:21 by elena            ###   ########.fr       */
+/*   Updated: 2024/04/10 11:48:09 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,6 @@ typedef struct s_game
 /* ************************************************************************** */
 
 /* -------------- INITIALIZE -------------- */		
-
-/** @brief Initializes the sprites structure
- * 
- *  @param game game structure
- * 
- *  @return sprites structure
-*/
-t_sprites	init_sprites(t_game *game);
 
 /** @brief Initializes the list of enemies
  * 
@@ -115,6 +107,24 @@ void		print_header(t_game *game);
 */
 void		print_end_screen(t_game *game, char *text);
 
+/** @brief Creates the messages to print on the screen for each frame
+ * 
+ *  @param game game structure
+ *  @param life string to store the life message
+ *  @param coll string to store the collectibles message
+ *  @param mov string to store the moves message
+*/
+void	create_messages(t_game *game, char **life, char **coll, char **mov);
+
+/** @brief Puts the information on the screen
+ * 
+ *  @param game game structure
+ *  @param life string with the life message
+ *  @param collec string with the collectibles message
+ *  @param move string with the moves message
+*/
+void	put_info(t_game *game, char *life, char *collec, char *moves);
+
 /* -------------- MOVEMENT -------------- */
 
 /** @brief Moves the player
@@ -129,7 +139,7 @@ void		move_player(t_game *game, int keycode);
  *  @param game game structure
  *  @param aux new position
 */
-void		perform_move(t_game *game, t_pos aux);
+//void		perform_move(t_game *game, t_pos aux);
 
 /** @brief Moves the enemies
  * 
@@ -179,5 +189,29 @@ int			in_board(t_game game, t_pos pos);
  *  @param game game structure
 */
 void		reset_game(t_game *game);
+
+/* -------------- SPRITES -------------- */
+
+/** @brief Initializes the sprites structure
+ * 
+ *  @param game game structure
+ * 
+ *  @return sprites structure
+*/
+t_sprites	init_sprites(t_game *game);
+
+void init_background_imgs(t_game *game, t_sprites *sprites);
+
+void init_tree_sprites(t_game *game, t_sprites *sprites);
+
+void init_collec_sprites(t_game *game, t_sprites *sprites);
+
+void init_door_sprites(t_game *game, t_sprites *sprites);
+
+void init_enemy_sprites(t_game *game, t_sprites *sprites);
+
+void init_extra_sprites(t_game *game, t_sprites *sprites);
+
+void init_player_sprites(t_game *game, t_sprites *sprites);
 
 #endif

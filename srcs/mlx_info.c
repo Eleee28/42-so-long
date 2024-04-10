@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_info.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 10:17:43 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/04/10 08:27:11 by elena            ###   ########.fr       */
+/*   Updated: 2024/04/10 11:06:57 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	handle_input(int keycode, t_game *game)
 	return (0);
 }
 
-t_sprites   init_sprites(t_game *game)
+/*t_sprites   init_sprites(t_game *game)
 {
 	t_sprites sprites;
 	int h;
@@ -63,6 +63,6 @@ t_sprites   init_sprites(t_game *game)
 	}
 	
 	return (sprites);
-}
+}*/
 
 

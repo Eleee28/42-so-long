@@ -6,7 +6,7 @@
 /*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 16:02:15 by ele               #+#    #+#             */
-/*   Updated: 2024/04/09 10:23:05 by elena            ###   ########.fr       */
+/*   Updated: 2024/04/10 08:31:55 by elena            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char    **ft_dup_matrix(char **src)
     char    **dup;
     int     i;
     
-    dup = (char **)malloc((ft_len_matrix(src) + 1) * sizeof(char));
+    dup = (char **)malloc((ft_len_matrix(src) + 1) * sizeof(char *));
     if (!dup)
         return (0);
     i = 0;

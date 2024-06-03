@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:12:09 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/04/10 15:34:48 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:12:51 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@
 
 /* -------------- DOOR SPRITES -------------- */
 
-# define DOOR_CLOSE "textures/door/door_close_32.xpm"
-# define DOOR_OPEN "textures/door/door_open_32.xpm"
+# define DOOR_CLOSE "textures_v2/xpm/door/door_closed.xpm" // "textures/door/door_close_32.xpm"
+# define DOOR_OPEN "textures_v2/xpm/door/door_open.xpm" // "textures/door/door_open_32.xpm"
 
 /* -------------- COLLECTIBLES SPRITES -------------- */
 
@@ -63,8 +63,8 @@
 
 /* -------------- EXTRA SPRITES -------------- */
 
-# define LIFE "textures_v2/xpm/icons/life.xpm" // "textures/extra/life_18.xpm"
-# define STAR "textures_v2/xpm/icons/star_icon.xpm"
+# define LIFE "textures_v2/xpm/icons/life2.xpm" // "textures/extra/life_18.xpm"
+# define STAR "textures_v2/xpm/icons/star_icon2.xpm"
 //# define COIN_OFF_PATH "textures/star_18.xpm"
 
 /* ************************************************************************** */

@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 16:06:53 by ele               #+#    #+#             */
-/*   Updated: 2024/04/10 15:35:54 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:16:47 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ void	put_info(t_game *game, char *life, char *collec, char *moves)
 		i++;
 	}
 	color = mlx_get_color_value(ptr, 0x00FFFFFF);
-	mlx_put_image_to_window(ptr, win, game->mlx.sprites.life, 6, 6);
-	mlx_string_put(ptr, win, 25, 20, color, life);
-	mlx_put_image_to_window(ptr, win, game->mlx.sprites.star, 55, 6);
-	mlx_string_put(ptr, win, 75, 20, color, collec);
-	mlx_string_put(ptr, win, 100, 20, color, moves);
+	mlx_put_image_to_window(ptr, win, game->mlx.sprites.life, 0, 0);
+	mlx_string_put(ptr, win, 12, 53, color, life);
+	mlx_put_image_to_window(ptr, win, game->mlx.sprites.star, 45, 0);
+	mlx_string_put(ptr, win, 58, 53, color, collec);
+	mlx_string_put(ptr, win, 95, 35, color, moves);
 }
 
 void	print_obj(t_game *game, t_pos pos)

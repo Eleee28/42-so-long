@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 10:59:43 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/04/10 11:00:29 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:20:02 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ void	print_end_screen(t_game *game, char *text)
 	win = game->mlx.mlx_data.mlx_win;
 	color = mlx_get_color_value(ptr, 0x00FFFFFF);
 	mlx_clear_window(ptr, win);
-	mlx_string_put(ptr, win, ((game->map_w / 2) - 1) * IMG_H,
-		(game->map_h / 2) * IMG_W, color, text);
-	mlx_string_put(ptr, win, ((game->map_w / 2) - 2) * IMG_H,
+	mlx_string_put(ptr, win, ((game->map_w / 2)) * IMG_W,
+		(game->map_h / 2) * IMG_H, color, text);
+	mlx_string_put(ptr, win, ((game->map_w / 2) - 0.5) * IMG_H,
 		((game->map_h / 2) + 1) * IMG_W, color, "Press [R] to reset");
 }

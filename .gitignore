@@ -1,0 +1,5 @@
+*.o
+*.a
+bin/
+so_long
+

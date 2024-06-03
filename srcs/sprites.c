@@ -17,14 +17,16 @@ void init_background_imgs(t_game *game, t_sprites *sprites)
     int w;
     int h;
     
-    sprites->black = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
-        BLACK, &w, &h);
-    sprites->blue = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
-        BLUE, &w, &h);
+    // sprites->black = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
+    //     BLACK, &w, &h);
+    // sprites->blue = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
+    //     BLUE, &w, &h);
     sprites->grass = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr, 
         GRASS, &w, &h);
+    sprites->header = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
+        HEADER, &w, &h);
     
-    if (!sprites->black || !sprites->blue || !sprites->grass)
+    if (/*!sprites->black || !sprites->blue ||*/ !sprites->grass || !sprites->header)
     {
         ft_free_matrix(game->map.map);
         mlx_destroy_window(game->mlx.mlx_data.mlx_ptr, game->mlx.mlx_data.mlx_win);

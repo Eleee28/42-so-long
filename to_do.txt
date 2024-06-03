@@ -1,0 +1,11 @@
+[x] background
+[x] tree w/ background
+[x] star on off w/ background
+[x] kirby left and right w/ background
+[ ] open exit w/ background
+[ ] closed exit w/ background
+[ ] closed exit w/ player and background
+[x] enemies left and right w/ background
+[ ] header
+[ ] modify speed animations
+[ ] check leaks

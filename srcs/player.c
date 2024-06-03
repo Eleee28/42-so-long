@@ -44,18 +44,28 @@ static void    perform_move(t_game *game, t_pos aux)
 void    move_player(t_game *game, int keycode)
 {
     t_pos aux;
+    char move;
     
     aux = game->player.coord;
     if (keycode == KEY_UP || keycode == KEY_W)	// move player up
         aux.x--;
 	else if (keycode == KEY_DOWN || keycode == KEY_S) // move player down
         aux.x++;
-	else if (keycode == KEY_LEFT || keycode == KEY_A) // move player left
+	else if (keycode == KEY_LEFT || keycode == KEY_A) { // move player left
         aux.y--;
-	else if (keycode == KEY_RIGHT || keycode == KEY_D) // move player right
+        move = 'L';
+    }
+	else if (keycode == KEY_RIGHT || keycode == KEY_D) { // move player right
         aux.y++;
+        move = 'R';
+    }
     if (in_board(*game, aux))
-        if (game->map.map[aux.x][aux.y] != '1')
+        if (game->map.map[aux.x][aux.y] != '1') {
+            if (move == 'L')
+                game->mlx.sprites.player.curr = game->mlx.sprites.player.left;
+            else if (move == 'R')
+                game->mlx.sprites.player.curr = game->mlx.sprites.player.right;
             perform_move(game, aux);
+        }
 }
 

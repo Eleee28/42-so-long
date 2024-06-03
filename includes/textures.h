@@ -19,23 +19,25 @@
 
 /* -------------- SCREEN DIMENSIONS -------------- */
 
-# define IMG_W 32
-# define IMG_H 32
+# define IMG_W 64 // 32
+# define IMG_H 64 // 32
 
 /* -------------- BACKGROUND IMGS -------------- */
 
 # define BLACK "textures/background/black_32.xpm"
 # define BLUE "textures/background/blue_32.xpm"
 
-# define GRASS "textures/background/grass_32.xpm"
+# define HEADER "textures_v2/xpm/background/header2.xpm"
+
+# define GRASS "textures_v2/xpm/background/grass.xpm" //"textures/background/grass_32.xpm"
 
 /* -------------- TREE SPRITES -------------- */
 
 //# define TREE "textures/tree.xpm"
-# define TREE1 "textures/tree/t1.xpm"
-# define TREE2 "textures/tree/t2.xpm"
-# define TREE3 "textures/tree/t3.xpm"
-# define TREE4 "textures/tree/t4.xpm"
+# define TREE1 "textures_v2/xpm/tree/tree1.xpm" // "textures/tree/t1.xpm"
+# define TREE2 "textures_v2/xpm/tree/tree2.xpm" // "textures/tree/t2.xpm"
+# define TREE3 "textures_v2/xpm/tree/tree3.xpm" // "textures/tree/t3.xpm"
+# define TREE4 "textures_v2/xpm/tree/tree4.xpm" // "textures/tree/t4.xpm"
 
 /* -------------- DOOR SPRITES -------------- */
 
@@ -44,20 +46,25 @@
 
 /* -------------- COLLECTIBLES SPRITES -------------- */
 
-# define COLL1 "textures/collectible/star1.xpm"
-# define COLL2 "textures/collectible/star2.xpm"
+# define COLL1 "textures_v2/xpm/collectible/star1.xpm" // "textures/collectible/star1.xpm"
+# define COLL2 "textures_v2/xpm/collectible/star2.xpm" // "textures/collectible/star2.xpm"
 
 /* -------------- PLAYER SPRITES -------------- */
 
-# define KIRBY_NORMAL "textures/kirby_normal.xpm"
+// # define KIRBY_NORMAL "textures/kirby_normal.xpm"
+# define KIRBY_LEFT "textures_v2/xpm/character/kirby_left.xpm"
+# define KIRBY_RIGHT "textures_v2/xpm/character/kirby_right.xpm"
 
 /* -------------- ENEMY SPRITES -------------- */
 
-# define ENEMY_NORMAL "textures/exit.xpm"
+// # define ENEMY_NORMAL "textures/exit.xpm"
+# define ENEMY_LEFT "textures_v2/xpm/character/enemy_left.xpm"
+# define ENEMY_RIGHT "textures_v2/xpm/character/enemy_right.xpm" 
 
 /* -------------- EXTRA SPRITES -------------- */
 
-# define LIFE "textures/extra/life_18.xpm"
+# define LIFE "textures_v2/xpm/icons/life.xpm" // "textures/extra/life_18.xpm"
+# define STAR "textures_v2/xpm/icons/star_icon.xpm"
 //# define COIN_OFF_PATH "textures/star_18.xpm"
 
 /* ************************************************************************** */
@@ -73,10 +80,9 @@
 */
 typedef struct s_charac_sp
 {
-	void	*up;
-	void	*down;
 	void	*left;
 	void	*right;
+	void	*curr;
 }			t_charac_sp;
 
 /** @brief Sprites structure
@@ -96,6 +102,7 @@ typedef struct s_sprites
 	void		*black;
 	void		*blue;
 	void		*grass;
+	void		*header;
 	
 	void		*tree1;
 	void		*tree2;
@@ -112,6 +119,7 @@ typedef struct s_sprites
 	t_charac_sp	enemy;
 	
 	void		*life;
+	void		*star;
 
 }				t_sprites;
 

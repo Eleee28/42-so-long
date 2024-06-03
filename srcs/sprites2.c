@@ -34,16 +34,29 @@ void init_enemy_sprites(t_game *game, t_sprites *sprites)
     int w;
     int h;
     
-    sprites->enemy.down = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
-        ENEMY_NORMAL, &w, &h);
-    /*sprites->collec2 = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
-        COIN_OFF, &w, &h);*/
-    if (!sprites->enemy.down /*|| !sprites->collec2*/)
-    {
+    // /*sprites->enemy.curr = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
+    //     ENEMY_NORMAL, &w, &h);
+    // /*sprites->collec2 = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
+    //     COIN_OFF, &w, &h);*/
+    // if (!sprites->enemy.curr /*|| !sprites->collec2*/)
+    // {
+    //     ft_free_matrix(game->map.map);
+    //     mlx_destroy_window(game->mlx.mlx_data.mlx_ptr, game->mlx.mlx_data.mlx_win);
+    //     print_error("Couldn't load enemy images\n");
+    // }
+
+    sprites->enemy.left = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
+        ENEMY_LEFT, &w, &h);
+    sprites->enemy.right = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
+        ENEMY_RIGHT, &w, &h);
+    sprites->enemy.curr = sprites->enemy.right;
+    if (!sprites->enemy.left || !sprites->enemy.right) {
         ft_free_matrix(game->map.map);
         mlx_destroy_window(game->mlx.mlx_data.mlx_ptr, game->mlx.mlx_data.mlx_win);
-        print_error("Couldn't load enemy images\n");
+        print_error("Couldn't load extra images\n");
     }
+    
+
 }
 
 void init_extra_sprites(t_game *game, t_sprites *sprites)
@@ -53,9 +66,11 @@ void init_extra_sprites(t_game *game, t_sprites *sprites)
     
     sprites->life = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
         LIFE, &w, &h);
+    sprites->star = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
+        STAR, &w, &h);
     /*sprites->collec2 = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
         COIN_OFF, &w, &h);*/
-    if (!sprites->life /*|| !sprites->collec2*/)
+    if (!sprites->life || !sprites->star /*|| !sprites->collec2*/)
     {
         ft_free_matrix(game->map.map);
         mlx_destroy_window(game->mlx.mlx_data.mlx_ptr, game->mlx.mlx_data.mlx_win);
@@ -68,14 +83,27 @@ void init_player_sprites(t_game *game, t_sprites *sprites)
     int w;
     int h;
     
-    sprites->player.down = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
-        KIRBY_NORMAL, &w, &h);
-    /*sprites->collec2 = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
-        COIN_OFF, &w, &h);*/
-    if (!sprites->player.down /*|| !sprites->collec2*/)
-    {
+    // /*sprites->player.down = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
+    //     KIRBY_NORMAL, &w, &h);
+    // /*sprites->collec2 = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
+    //     COIN_OFF, &w, &h);*/
+    // if (!sprites->player.down /*|| !sprites->collec2*/)
+    // {
+    //     ft_free_matrix(game->map.map);
+    //     mlx_destroy_window(game->mlx.mlx_data.mlx_ptr, game->mlx.mlx_data.mlx_win);
+    //     print_error("Couldn't load character images\n");
+    // }
+    // */
+
+    sprites->player.left = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
+        KIRBY_LEFT, &w, &h);
+    sprites->player.right = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
+        KIRBY_RIGHT, &w, &h);
+    sprites->player.curr = sprites->player.right;
+    if (!sprites->player.left || !sprites->player.right) {
         ft_free_matrix(game->map.map);
         mlx_destroy_window(game->mlx.mlx_data.mlx_ptr, game->mlx.mlx_data.mlx_win);
-        print_error("Couldn't load character images\n");
+        print_error("Couldn't load extra images\n");
     }
+    
 }

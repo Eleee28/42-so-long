@@ -47,7 +47,7 @@ void	print_enemies(t_game *game, t_pos pos)
 	{
 		if (equal_pos(pos, game->enemies.enemies[i]))
 			mlx_put_image_to_window(game->mlx.mlx_data.mlx_ptr,
-				game->mlx.mlx_data.mlx_win, game->mlx.sprites.enemy.down,
+				game->mlx.mlx_data.mlx_win, game->mlx.sprites.enemy.curr,
 				pos.y * IMG_W, (pos.x + 1) * IMG_H);
 		i++;
 	}
@@ -78,8 +78,13 @@ void	move_enemies(t_game *game)
 		else if (m == 4)
 			aux.y++;
 		if (in_board(*game, aux) && game->map.map[aux.x][aux.y] == '0')
-			if (!equal_pos(game->player.coord, game->enemies.enemies[i]))
+			if (!equal_pos(game->player.coord, game->enemies.enemies[i])) {
+				if (m == 3)
+					game->mlx.sprites.enemy.curr = game->mlx.sprites.enemy.left;
+				else if (m == 4)
+					game->mlx.sprites.enemy.curr = game->mlx.sprites.enemy.right;
 				game->enemies.enemies[i] = aux;
+			}
 		i++;
 	}
 }

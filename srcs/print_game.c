@@ -18,7 +18,7 @@ int	print_game(t_game *game)
 	int	c;
 
 	r = 0;
-	mlx_clear_window(game->mlx.mlx_data.mlx_ptr, game->mlx.mlx_data.mlx_win);
+	//mlx_clear_window(game->mlx.mlx_data.mlx_ptr, game->mlx.mlx_data.mlx_win);
 	while (r < game->map_h)
 	{
 		c = 0;

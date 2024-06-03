@@ -38,6 +38,8 @@ SRC_DIR = srcs
 
 LIBFT_DIR = library
 
+BIN_DIR = bin
+
 OS = $(shell uname -s)
 
 ifeq ($(OS), Linux)
@@ -50,44 +52,45 @@ ifeq ($(OS), Darwin)
 	MLX_FLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 endif
 
-
 CC = cc
 
 CFLAGS += -Wall -Werror -Wextra -g3
 
-REMOVE = rm -f
+REMOVE = rm -rf
 
 LIB = ar -crs
 
 INCLUDE = -Ilibrary
 
+VPATH = srcs
+
 # SOURCES
 
-SRCS =	$(SRC_DIR)/main.c \
+SRCS =	main.c \
 		\
-		$(SRC_DIR)/error.c \
+		error.c \
 		\
-		$(SRC_DIR)/map.c	\
-		$(SRC_DIR)/map_utils.c	\
-		$(SRC_DIR)/map_utils2.c	\
+		map.c	\
+		map_utils.c	\
+		map_utils2.c	\
 		\
-		$(SRC_DIR)/game.c	\
-		$(SRC_DIR)/game_utils.c	\
+		game.c	\
+		game_utils.c	\
 		\
-		$(SRC_DIR)/mlx_info.c	\
+		mlx_info.c	\
 		\
-		$(SRC_DIR)/position.c	\
-		$(SRC_DIR)/player.c	\
-		$(SRC_DIR)/enemies.c \
+		position.c	\
+		player.c	\
+		enemies.c \
 		\
-		$(SRC_DIR)/print_game.c \
-		$(SRC_DIR)/print_game_utils.c \
+		print_game.c \
+		print_game_utils.c \
 		\
-		$(SRC_DIR)/sprites.c \
-		$(SRC_DIR)/sprites2.c \
-		$(SRC_DIR)/print_sprites.c
+		sprites.c \
+		sprites2.c \
+		print_sprites.c
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:%.c=$(BIN_DIR)/%.o)
 
 LIBFT = $(LIBFT_DIR)/libft.a
 
@@ -107,7 +110,8 @@ $(NAME): $(OBJS) $(LIBFT) $(MLX)
 msg:
 	@echo "$(GREEN)✨ SO LONG!$(DEFAULT)"
 
-$(SRC_DIR)/%.o: $(SRC_DIR)/%.c
+$(BIN_DIR)/%.o: %.c
+	@mkdir -p $(BIN_DIR)
 	@echo "🔍 $(YELLOW)Compiling... $< $(DEFAULT)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
@@ -138,7 +142,7 @@ clean:
 	@make clean -sC $(LIBFT_DIR)
 	@make clean -sC $(MLX_DIR)
 	@echo "$(CYAN)Library object files cleaned$(DEFAULT)"
-	@$(REMOVE) $(OBJS)
+	@$(REMOVE) $(OBJS) $(BIN_DIR)
 	@echo "$(CYAN)So long object files cleaned$(DEFAULT)"
 
 fclean: clean
@@ -151,6 +155,8 @@ re: fclean
 	@echo " "
 	@echo "$(GREEN)Cleaned everything for so long!$(DEFAULT)"
 	@$(MAKE) all
+
+bonus: all
 
 play: 
 	./$(NAME) files/small_map.ber

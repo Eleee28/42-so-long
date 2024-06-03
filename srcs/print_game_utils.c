@@ -43,13 +43,13 @@ void	put_info(t_game *game, char *life, char *collec, char *moves)
 	win = game->mlx.mlx_data.mlx_win;
 	while (i < game->map_w)
 	{
-		mlx_put_image_to_window(ptr, win, game->mlx.sprites.blue, i * IMG_W, 0);
+		mlx_put_image_to_window(ptr, win, game->mlx.sprites.header, i * IMG_W, 0);
 		i++;
 	}
 	color = mlx_get_color_value(ptr, 0x00FFFFFF);
 	mlx_put_image_to_window(ptr, win, game->mlx.sprites.life, 6, 6);
 	mlx_string_put(ptr, win, 25, 20, color, life);
-	mlx_put_image_to_window(ptr, win, game->mlx.sprites.collec1, 55, 6);
+	mlx_put_image_to_window(ptr, win, game->mlx.sprites.star, 55, 6);
 	mlx_string_put(ptr, win, 75, 20, color, collec);
 	mlx_string_put(ptr, win, 100, 20, color, moves);
 }
@@ -72,11 +72,11 @@ void	print_obj(t_game *game, t_pos pos)
 			mlx_put_image_to_window(ptr, win, game->mlx.sprites.exit_open,
 				pos.y * IMG_W, (pos.x + 1) * IMG_H);
 		if (equal_pos(pos, game->player.coord))
-			mlx_put_image_to_window(ptr, win, game->mlx.sprites.player.down,
+			mlx_put_image_to_window(ptr, win, game->mlx.sprites.player.curr,
 				(pos.y * IMG_W) + 2, ((pos.x + 1) * IMG_H) + 5);
 	}
 	else if (equal_pos(pos, game->player.coord) && game->player.life > 0)
-		mlx_put_image_to_window(ptr, win, game->mlx.sprites.player.down,
+		mlx_put_image_to_window(ptr, win, game->mlx.sprites.player.curr,
 			(pos.y * IMG_W) + 2, ((pos.x + 1) * IMG_H) + 5);
 	else if (game->map.map[pos.x][pos.y] == '1')
 		put_tree_sprite(game, pos);

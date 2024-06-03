@@ -2,10 +2,10 @@
 [x] tree w/ background
 [x] star on off w/ background
 [x] kirby left and right w/ background
-[ ] open exit w/ background
-[ ] closed exit w/ background
-[ ] closed exit w/ player and background
+[x] open exit w/ background
+[x] closed exit w/ background
+[ ] closed exit w/ player and background --> maybe not necessary ??
 [x] enemies left and right w/ background
-[ ] header
-[ ] modify speed animations
+[x] header
+[ ] modify speed animations --> check, in laptop seems ok
 [ ] check leaks

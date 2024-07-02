@@ -23,8 +23,10 @@ int	mlx_X_error;
 
 int	shm_att_pb(Display *d,XErrorEvent *ev)
 {
+  int flag;
   if (ev->request_code==146 && ev->minor_code==X_ShmAttach)
-    write(2,WARN_SHM_ATTACH,strlen(WARN_SHM_ATTACH));
+    flag = write(2,WARN_SHM_ATTACH,strlen(WARN_SHM_ATTACH));
+  (void)flag;
   mlx_X_error = 1;
 }
 
@@ -44,7 +46,7 @@ void	*mlx_int_new_xshm_image(t_xvar *xvar,int width,int height,int format)
   bzero(img,sizeof(*img));
   img->data = 0;
   img->image = XShmCreateImage(xvar->display,xvar->visual,xvar->depth,
-			       format,img->data,&(img->shm),width,height);
+      format,img->data,&(img->shm),width,height);
   if (!img->image)
     {
       free(img);
@@ -88,13 +90,13 @@ void	*mlx_int_new_xshm_image(t_xvar *xvar,int width,int height,int format)
   if (xvar->pshm_format==format)
     {
       img->pix = XShmCreatePixmap(xvar->display,xvar->root,img->shm.shmaddr,
-				  &(img->shm),width,height,xvar->depth);
+          &(img->shm),width,height,xvar->depth);
       img->type = MLX_TYPE_SHM_PIXMAP;
     }
   else
     {
       img->pix = XCreatePixmap(xvar->display,xvar->root,
-			       width,height,xvar->depth);
+            width,height,xvar->depth);
       img->type = MLX_TYPE_SHM;
     }
   if (xvar->do_flush)

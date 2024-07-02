@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dup_matrix.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 16:02:15 by ele               #+#    #+#             */
-/*   Updated: 2024/04/10 08:31:55 by elena            ###   ########.fr       */
+/*   Updated: 2024/07/02 09:37:12 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrix_utils.h"
 #include "../libft/libft.h"
 
-char    **ft_dup_matrix(char **src)
+char	**ft_dup_matrix(char **src)
 {
-    char    **dup;
-    int     i;
-    
-    dup = (char **)malloc((ft_len_matrix(src) + 1) * sizeof(char *));
-    if (!dup)
-        return (0);
-    i = 0;
-    while (src && src[i])
-    {
-        dup[i] = ft_strdup(src[i]);
-        i++;
-    }
-    dup[i] = 0;
-    return (dup);
+	char	**dup;
+	int		i;
+
+	dup = (char **)malloc((ft_len_matrix(src) + 1) * sizeof(char *));
+	if (!dup)
+		return (0);
+	i = 0;
+	while (src && src[i])
+	{
+		dup[i] = ft_strdup(src[i]);
+		i++;
+	}
+	dup[i] = 0;
+	return (dup);
 }

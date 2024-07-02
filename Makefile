@@ -6,7 +6,7 @@
 #    By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 15:16:19 by elena             #+#    #+#              #
-#    Updated: 2024/07/02 08:26:46 by ejuarros         ###   ########.fr        #
+#    Updated: 2024/07/02 14:47:21 by ejuarros         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,9 @@ CYAN	= \033[96m
 
 # Mandatory executable
 NAME	= so_long
+
+# Bonus executable
+BONUS	= so_long_bonus
 
 # Library directory
 LIB_DIR	= library
@@ -48,7 +51,7 @@ endif
 
 # Compilation variables
 CC		:= cc
-CFLAGS	:= -Wall -Werror -Wextra
+CFLAGS	:= -Wall -Werror -Wextra -g3
 
 # Remove flags
 REMOVE	:= rm -rf
@@ -61,7 +64,7 @@ INCLUDE = -Ilibrary
 ################################################################################
 
 # Possible source files path
-VPATH = srcs
+VPATH = srcs:srcs_bonus
 
 # Library file
 LIB = $(LIB_DIR)/libft.a
@@ -71,31 +74,41 @@ MLX = $(MLX_DIR)/libmlx.a
 
 # Source files
 SRCS =	main.c 				\
-\
 		error.c 			\
-\
 		map.c				\
 		map_utils.c			\
 		map_utils2.c		\
-\
 		game.c				\
 		game_utils.c		\
-\
 		mlx_info.c			\
-\
 		position.c			\
 		player.c			\
-		enemies.c 			\
-\
 		print_game.c 		\
 		print_game_utils.c 	\
-\
 		sprites.c 			\
 		sprites2.c 			\
 		print_sprites.c
 
+SRCS_BONUS = 	main_bonus.c 				\
+				error_bonus.c 				\
+				map_bonus.c					\
+				map_utils_bonus.c			\
+				map_utils2_bonus.c			\
+				game_bonus.c				\
+				game_utils_bonus.c			\
+				mlx_info_bonus.c			\
+				position_bonus.c			\
+				player_bonus.c				\
+				enemies_bonus.c 			\
+				print_game_bonus.c 			\
+				print_game_utils_bonus.c 	\
+				sprites_bonus.c 			\
+				sprites2_bonus.c 			\
+				print_sprites_bonus.c
+
 # Object files
 OBJS = $(SRCS:%.c=$(BIN_DIR)/%.o)
+OBJS_BONUS = $(SRCS_BONUS:%.c=$(BIN_DIR)/%.o)
 
 ################################################################################
 
@@ -129,23 +142,26 @@ $(LIB):
 
 # Mlx compilation
 $(MLX):
-#@echo
 	@echo "$(MAGENTA)🔶 MAKE MLX 🔶$(DEFAULT)"
 	@echo
-#@echo "$(GREEN)Mlx lib...$(DEFAULT)"
 	@make -C $(MLX_DIR)
 	@echo "$(GREEN)✨ MLX LIB!$(DEFAULT)"
 	@echo
-#@echo "$(GREEN)Library compiled!$(DEFAULT)"
 
 ################################################################################
 
-bonus: all
+# Bonus compilation
+bonus: $(BONUS) msg_bonus
+	@echo
+
+$(BONUS): $(LIB) $(MLX) $(OBJS_BONUS)
+	@$(CC) $(OBJS_BONUS) $(LIB) $(MLX_FLAGS) $(INCLUDE) -o $(BONUS)
+	@echo
 
 ################################################################################
 
 aux_clean:
-	@$(REMOVE) $(OBJS) $(BIN_DIR)
+	@$(REMOVE) $(OBJS) $(OBJS_BONUS) $(BIN_DIR)
 	@echo "$(CYAN)So long object files cleaned$(DEFAULT)"
 
 clean: msg_clean
@@ -155,7 +171,7 @@ clean: msg_clean
 	@echo
 
 fclean: msg_clean aux_clean
-	@$(REMOVE) $(NAME)
+	@$(REMOVE) $(NAME) $(BONUS)
 	@echo "$(CYAN)So long executable files cleaned!$(DEFAULT)"
 	@echo
 	@make fclean -C $(LIB_DIR)
@@ -171,6 +187,10 @@ msg:
 	@echo
 	@echo "$(GREEN)✨ SO LONG!$(DEFAULT)"
 
+msg_bonus:
+	@echo
+	@echo "$(GREEN)✨ SO LONG BONUS!$(DEFAULT)"
+
 msg_clean:
 	@echo
 	@echo "$(MAGENTA)🔶 CLEAN 🔶$(DEFAULT)"
@@ -179,10 +199,10 @@ msg_clean:
 ################################################################################
 
 play: all
-	./$(NAME) files/small_map.ber
-	./$(NAME) files/big_map.ber
-	./$(NAME) files/collec_after_exit.ber
-	./$(NAME) files/with_enemies.ber
+	./$(NAME) maps/small_map.ber
+	./$(NAME) maps/big_map.ber
+	./$(NAME) maps/collec_after_exit.ber
+	./$(NAME) maps/with_enemies.ber
 
 ################################################################################
-.PHONY: all bonus aux_clean clean fclean re msg msg_clean play
+.PHONY: all bonus aux_clean clean fclean re msg  msg_bonus msg_clean play

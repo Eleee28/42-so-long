@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:37:24 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/07/02 10:14:34 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 11:52:20 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,6 @@ void	init_door_sprites(t_game *game, t_sprites *sprites)
 		mlx_destroy_window(game->mlx.mlx_data.mlx_ptr,
 			game->mlx.mlx_data.mlx_win);
 		print_error("Couldn't load exit images\n");
-	}
-}
-
-void	init_enemy_sprites(t_game *game, t_sprites *sprites)
-{
-	int	w;
-	int	h;
-
-	sprites->enemy.l = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
-			ENEMY_LEFT, &w, &h);
-	sprites->enemy.r = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
-			ENEMY_RIGHT, &w, &h);
-	sprites->enemy.curr = sprites->enemy.r;
-	if (!sprites->enemy.l || !sprites->enemy.r)
-	{
-		ft_free_matrix(game->map.map);
-		mlx_destroy_window(game->mlx.mlx_data.mlx_ptr,
-			game->mlx.mlx_data.mlx_win);
-		print_error("Couldn't load extra images\n");
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:49:35 by elena             #+#    #+#             */
-/*   Updated: 2024/07/02 09:30:20 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:51:52 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 # define GAME_H
 
 # include "../library/library.h"
-# include "../mlx/mlx.h"
-# include "../mlx_linux/mlx.h"
+
+# ifdef __APPLE__
+#  include "../mlx/mlx.h"
+
+# elif __linux__
+#  include "../mlx_linux/mlx.h"
+
+# endif
+
 # include "map.h"
 # include "mlx_info.h"
-# include "enemies.h"
 
 /* ************************************************************************** */
 /*                 DATA TYPES DEFINITIONS                                     */
@@ -27,28 +33,22 @@
 /** @brief Game structure
  * 
  *  @param map map structure
- *  @param enemies enemies structure
  *  @param player player structure
  *  @param mlx mlx structure
  *  @param map_w map width
  *  @param map_h map height
  *  @param screen_w screen width
  *  @param screen_h screen height
- *  @param frames current frame cycle
 */
 typedef struct s_game
 {
 	t_map		map;
-	t_enemies	enemies;
 	t_player	player;
 	t_mlx		mlx;
 	int			map_w;
 	int			map_h;
 	int			screen_w;
 	int			screen_h;
-	int			frames;
-
-	int			render;
 }				t_game;
 
 /* ************************************************************************** */
@@ -56,13 +56,6 @@ typedef struct s_game
 /* ************************************************************************** */
 
 // SECTION: Initialize
-
-/** @brief Initializes the list of enemies
- * 
- *  @param game game structure
- *  @param n_enemies number of enemies
-*/
-void		init_enemies(t_game *game, int n);
 
 /** @brief Gets the game info
  * 
@@ -94,13 +87,6 @@ void		print_obj(t_game *game, t_pos pos);
  *  @return 0
 */
 int			print_game(t_game *game);
-
-/** @brief Prints the enemies
- * 
- *  @param game game structure
- *  @param pos position of the map
-*/
-void		print_enemies(t_game *game, t_pos pos);
 
 /** @brief Prints the header
  * 
@@ -143,19 +129,6 @@ void		put_info(t_game *game, char *life, char *collec, char *moves);
  *  @param keycode key representing the movement
 */
 void		move_player(t_game *game, int keycode);
-
-/** @brief Performs the player movement
- * 
- *  @param game game structure
- *  @param aux new position
-*/
-//void		perform_move(t_game *game, t_pos aux);
-
-/** @brief Moves the enemies
- * 
- *  @param game game structure
-*/
-void		move_enemies(t_game *game);
 
 // !SECTION
 
@@ -204,6 +177,12 @@ int			in_board(t_game game, t_pos pos);
 */
 void		reset_game(t_game *game);
 
+/** @brief Exits the window in a clean way
+ * 
+ *  @param data mlx data structure
+*/
+int	exit_window(t_game *game);
+
 // !SECTION
 
 // SECTION: Sprites
@@ -244,13 +223,6 @@ void		init_collec_sprites(t_game *game, t_sprites *sprites);
 */
 void		init_door_sprites(t_game *game, t_sprites *sprites);
 
-/** @brief Initializes enemy sprites
- * 
- *  @param game game structure
- *  @param sprites sprites structure
-*/
-void		init_enemy_sprites(t_game *game, t_sprites *sprites);
-
 /** @brief Initializes extra sprites
  * 
  *  @param game game structure
@@ -280,4 +252,5 @@ void		put_tree_sprite(t_game *game, t_pos pos);
 void		put_collec_sprite(t_game *game, t_pos pos);
 
 // !SECTION
+
 #endif

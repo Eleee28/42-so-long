@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:07:15 by elena             #+#    #+#             */
-/*   Updated: 2024/07/02 10:59:38 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 11:54:25 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include "player.h"
 
-# define VALID_CHARS "01PCEX\0"
+# define VALID_CHARS "01PCE\0"
 # define MAX_SIZE 256
 
 /* ************************************************************************** */

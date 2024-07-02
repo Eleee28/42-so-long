@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 16:06:53 by ele               #+#    #+#             */
-/*   Updated: 2024/07/02 10:07:48 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 11:50:54 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void	print_obj(t_game *game, t_pos pos)
 	else
 		mlx_put_image_to_window(ptr, win, game->mlx.sprites.grass,
 			pos.y * IMG_W, (pos.x + 1) * IMG_H);
-	print_enemies(game, pos);
 }
 
 void	init_print(t_game *game)

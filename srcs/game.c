@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:49:12 by elena             #+#    #+#             */
-/*   Updated: 2024/07/02 09:52:54 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 12:53:31 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	open_window(t_game *game)
 	init_print(game);
 	mlx_key_hook(game->mlx.mlx_data.mlx_win, handle_input, game);
 	mlx_hook(game->mlx.mlx_data.mlx_win, CLOSEBUTTON, CLOSEBUTTONMASK,
-		exit_window, &game->mlx.mlx_data);
+		exit_window, game);
 	mlx_loop_hook(game->mlx.mlx_data.mlx_ptr, play_game, game);
 	mlx_loop(game->mlx.mlx_data.mlx_ptr);
 }
@@ -52,21 +52,13 @@ int	play_game(t_game *game)
 {
 	if (!game->map.map)
 		return (0);
-	game->frames++;
 	if (game->player.life <= 0)
 		print_end_screen(game, "Game Over!");
 	else if (equal_pos(game->player.coord, game->map.exit_coord)
 		&& game->player.collec == game->map.n_collec)
 		print_end_screen(game, "You Win!");
 	else
-	{
-		if (game->frames == 200)
-		{
-			game->frames = 0;
-			move_enemies(game);
-		}
 		print_game(game);
-	}
 	return (0);
 }
 
@@ -76,12 +68,9 @@ void	reset_game(t_game *game)
 	game->map.map = ft_dup_matrix(game->map.init_map);
 	if (!game->map.map)
 		print_error("Error using malloc");
-	if (game->enemies.enemies)
-		free(game->enemies.enemies);
-	init_enemies(game, game->enemies.n_enemies);
-	game->frames = 0;
 	game->player.collec = 0;
 	game->player.life = 1;
 	game->player.coord = game->map.init_coord;
 	game->player.moves = 0;
+	init_print(game);
 }

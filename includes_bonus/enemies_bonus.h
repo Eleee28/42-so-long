@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   enemies.h                                          :+:      :+:    :+:   */
+/*   enemies_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 07:58:29 by ele               #+#    #+#             */
-/*   Updated: 2024/04/09 20:36:57 by elena            ###   ########.fr       */
+/*   Updated: 2024/07/02 11:56:15 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMIES_H
-# define ENEMIES_H
+#ifndef ENEMIES_BONUS_H
+# define ENEMIES_BONUS_H
 
-# include "position.h"
+# include "position_bonus.h"
 
 /* ************************************************************************** */
 /*                 DATA TYPES DEFINITIONS                                     */

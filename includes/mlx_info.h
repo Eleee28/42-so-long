@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 09:49:38 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/07/02 09:32:02 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:00:58 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,11 +94,5 @@ typedef struct s_mlx
  *  A keysym is the abstract representation of it, used in software to 
  *  identify the key regardless of hardware.
 */
-
-/** @brief Exits the window in a clean way
- * 
- *  @param data mlx data structure
-*/
-int	exit_window(t_mlx_data *data);
 
 #endif

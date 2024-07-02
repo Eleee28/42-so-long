@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:07:08 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/07/02 10:12:12 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 14:11:54 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,9 @@ void	init_tree_sprites(t_game *game, t_sprites *sprites)
 	int	w;
 	int	h;
 
-	sprites->tree1 = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
+	sprites->tree = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
 			TREE1, &w, &h);
-	sprites->tree2 = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
-			TREE2, &w, &h);
-	sprites->tree3 = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
-			TREE3, &w, &h);
-	sprites->tree4 = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
-			TREE4, &w, &h);
-	if (!sprites->tree1 || !sprites->tree2 || !sprites->tree3
-		|| !sprites->tree4)
+	if (!sprites->tree)
 	{
 		ft_free_matrix(game->map.map);
 		mlx_destroy_window(game->mlx.mlx_data.mlx_ptr,
@@ -58,11 +51,9 @@ void	init_collec_sprites(t_game *game, t_sprites *sprites)
 	int	w;
 	int	h;
 
-	sprites->collec1 = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
+	sprites->collec = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
 			COLL1, &w, &h);
-	sprites->collec2 = mlx_xpm_file_to_image(game->mlx.mlx_data.mlx_ptr,
-			COLL2, &w, &h);
-	if (!sprites->collec1 || !sprites->collec2)
+	if (!sprites->collec)
 	{
 		ft_free_matrix(game->map.map);
 		mlx_destroy_window(game->mlx.mlx_data.mlx_ptr,
@@ -79,7 +70,6 @@ t_sprites	init_sprites(t_game *game)
 	init_tree_sprites(game, &sprites);
 	init_collec_sprites(game, &sprites);
 	init_door_sprites(game, &sprites);
-	init_enemy_sprites(game, &sprites);
 	init_extra_sprites(game, &sprites);
 	init_player_sprites(game, &sprites);
 	return (sprites);

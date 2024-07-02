@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 15:47:08 by elena             #+#    #+#             */
-/*   Updated: 2024/07/02 10:59:46 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 12:18:47 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ char	**read_map(char *file_name)
 		map = ft_add_matrix(map, line);
 		line = get_next_line(fd);
 	}
-	free(line);
+	if (line)
+		free(line);
 	close(fd);
 	return (map);
 }

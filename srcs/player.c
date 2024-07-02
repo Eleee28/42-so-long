@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 08:59:33 by ele               #+#    #+#             */
-/*   Updated: 2024/07/02 10:04:53 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 12:45:54 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 */
 static void	perform_move(t_game *game, t_pos aux)
 {
-	int	i;
-
 	if (!equal_pos(game->player.coord, aux))
 	{
 		game->player.moves++;
@@ -32,13 +30,6 @@ static void	perform_move(t_game *game, t_pos aux)
 		game->player.collec++;
 		game->map.map[aux.x][aux.y] = '0';
 		print_header(game);
-	}
-	i = 0;
-	while (i < game->enemies.n_enemies)
-	{
-		if (equal_pos(aux, game->enemies.enemies[i]))
-			game->player.life--;
-		i++;
 	}
 	game->player.coord = aux;
 }
@@ -61,6 +52,7 @@ void	move_player(t_game *game, int keycode)
 	char	move;
 
 	aux = game->player.coord;
+	move = 0;
 	if (keycode == KEY_UP || keycode == KEY_W)
 		aux.x--;
 	else if (keycode == KEY_DOWN || keycode == KEY_S)

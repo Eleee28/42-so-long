@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 10:59:43 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/06/03 18:20:02 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 08:46:39 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	print_game(t_game *game)
 	int	c;
 
 	r = 0;
-	//mlx_clear_window(game->mlx.mlx_data.mlx_ptr, game->mlx.mlx_data.mlx_win);
 	while (r < game->map_h)
 	{
 		c = 0;
@@ -29,7 +28,7 @@ int	print_game(t_game *game)
 		}
 		r++;
 	}
-	print_header(game);
+	//print_header(game);
 	return (0);
 }
 

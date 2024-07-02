@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:49:35 by elena             #+#    #+#             */
-/*   Updated: 2024/04/10 15:37:44 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 08:55:04 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ void		init_enemies(t_game *game, int n);
 void		get_game_info(t_game *game);
 
 /* -------------- PRINT -------------- */
+
+void	init_print(t_game *game);
 
 /** @brief Prints the objects of the game
  * 

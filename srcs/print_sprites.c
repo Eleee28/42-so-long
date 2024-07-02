@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:07:53 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/04/10 15:37:47 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 09:02:29 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ void    put_tree_sprite(t_game *game, t_pos pos)
 
     ptr = game->mlx.mlx_data.mlx_ptr;
     win = game->mlx.mlx_data.mlx_win;
-    if (game->frames <= 25)
+    if (game->frames == 0) /*<= 25)*/
         mlx_put_image_to_window(ptr, win, game->mlx.sprites.tree1,
 			pos.y * IMG_W, (pos.x + 1) * IMG_H);
-    else if (game->frames <= 50)
+    else if (game->frames == 50) /*<= 50)*/
         mlx_put_image_to_window(ptr, win, game->mlx.sprites.tree2,
 			pos.y * IMG_W, (pos.x + 1) * IMG_H);
-    else if (game->frames <= 75)
+    else if (game->frames == 100) /*<= 75)*/
         mlx_put_image_to_window(ptr, win, game->mlx.sprites.tree3,
             pos.y * IMG_W, (pos.x + 1) * IMG_H);
-    else if (game->frames <= 100)
+    else if (game->frames == 150) /*<= 100)*/
         mlx_put_image_to_window(ptr, win, game->mlx.sprites.tree4,
             pos.y * IMG_W, (pos.x + 1) * IMG_H);
 }

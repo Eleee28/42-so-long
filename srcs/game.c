@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:49:12 by elena             #+#    #+#             */
-/*   Updated: 2024/04/10 15:19:37 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 09:01:57 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	open_window(t_game *game)
 		print_error("Error creating window\n");
 	}
 	game->mlx.sprites = init_sprites(game);
+	init_print(game);
 	mlx_key_hook(game->mlx.mlx_data.mlx_win, handle_input, game);
 	mlx_hook(game->mlx.mlx_data.mlx_win, CLOSEBUTTON, CLOSEBUTTONMASK,
 		exit_window, &game->mlx.mlx_data);
@@ -59,7 +60,7 @@ int	play_game(t_game *game)
 		print_end_screen(game, "You Win!");
 	else
 	{
-		if (game->frames == 100)
+		if (game->frames == 200)
 		{
 			game->frames = 0;
 			move_enemies(game);

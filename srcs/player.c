@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 08:59:33 by ele               #+#    #+#             */
-/*   Updated: 2024/04/10 11:44:41 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 08:48:43 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ static void    perform_move(t_game *game, t_pos aux)
     {
         game->player.moves++;
         ft_printf("Number of movements performed: %d\n", game->player.moves);
+        print_header(game);
     }
     if (game->map.map[aux.x][aux.y] == 'C')
     {
         game->player.collec++;
         game->map.map[aux.x][aux.y] = '0';
+        print_header(game);
     }
     i = 0;
     while (i < game->enemies.n_enemies)

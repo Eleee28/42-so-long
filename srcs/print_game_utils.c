@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 16:06:53 by ele               #+#    #+#             */
-/*   Updated: 2024/06/03 18:16:47 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 08:59:54 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,10 @@ void	print_obj(t_game *game, t_pos pos)
 
 	ptr = game->mlx.mlx_data.mlx_ptr;
 	win = game->mlx.mlx_data.mlx_win;
-	mlx_put_image_to_window(ptr, win, game->mlx.sprites.grass,
-		pos.y * IMG_W, (pos.x + 1) * IMG_H);
-	if (game->map.map[pos.x][pos.y] == 'E')
+	if (equal_pos(pos, game->player.coord) && game->player.life > 0)
+		mlx_put_image_to_window(ptr, win, game->mlx.sprites.player.curr,
+			(pos.y * IMG_W) + 2, ((pos.x + 1) * IMG_H) + 5);
+	else if (game->map.map[pos.x][pos.y] == 'E')
 	{
 		if (game->player.collec != game->map.n_collec)
 			mlx_put_image_to_window(ptr, win, game->mlx.sprites.exit_closed,
@@ -71,16 +72,37 @@ void	print_obj(t_game *game, t_pos pos)
 		else
 			mlx_put_image_to_window(ptr, win, game->mlx.sprites.exit_open,
 				pos.y * IMG_W, (pos.x + 1) * IMG_H);
-		if (equal_pos(pos, game->player.coord))
-			mlx_put_image_to_window(ptr, win, game->mlx.sprites.player.curr,
-				(pos.y * IMG_W) + 2, ((pos.x + 1) * IMG_H) + 5);
 	}
-	else if (equal_pos(pos, game->player.coord) && game->player.life > 0)
-		mlx_put_image_to_window(ptr, win, game->mlx.sprites.player.curr,
-			(pos.y * IMG_W) + 2, ((pos.x + 1) * IMG_H) + 5);
 	else if (game->map.map[pos.x][pos.y] == '1')
 		put_tree_sprite(game, pos);
 	else if (game->map.map[pos.x][pos.y] == 'C')
 		put_collec_sprite(game, pos);
+	else
+		mlx_put_image_to_window(ptr, win, game->mlx.sprites.grass,
+			pos.y * IMG_W, (pos.x + 1) * IMG_H);
 	print_enemies(game, pos);
+}
+
+void	init_print(t_game *game)
+{
+	int i;
+	int j;
+	void	*ptr;
+	void	*win;
+
+	print_header(game);
+	ptr = game->mlx.mlx_data.mlx_ptr;
+	win = game->mlx.mlx_data.mlx_win;
+	i = 0;
+	while (i < game->map_h)
+	{
+		j = 0;
+		while (j < game->map_w)
+		{
+			mlx_put_image_to_window(ptr, win, game->mlx.sprites.grass,
+			j * IMG_W, (i + 1) * IMG_H);
+			++j;
+		}
+		++i;
+	}
 }

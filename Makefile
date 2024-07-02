@@ -6,7 +6,7 @@
 #    By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 15:16:19 by elena             #+#    #+#              #
-#    Updated: 2024/07/02 08:18:41 by ejuarros         ###   ########.fr        #
+#    Updated: 2024/07/02 08:26:46 by ejuarros         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -178,7 +178,7 @@ msg_clean:
 
 ################################################################################
 
-play: 
+play: all
 	./$(NAME) files/small_map.ber
 	./$(NAME) files/big_map.ber
 	./$(NAME) files/collec_after_exit.ber

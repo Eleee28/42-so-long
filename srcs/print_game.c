@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 10:59:43 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/07/02 08:46:39 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 10:08:16 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	print_game(t_game *game)
 		}
 		r++;
 	}
-	//print_header(game);
 	return (0);
 }
 

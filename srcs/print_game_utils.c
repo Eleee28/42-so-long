@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 16:06:53 by ele               #+#    #+#             */
-/*   Updated: 2024/07/02 08:59:54 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 10:07:48 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ void	put_info(t_game *game, char *life, char *collec, char *moves)
 	win = game->mlx.mlx_data.mlx_win;
 	while (i < game->map_w)
 	{
-		mlx_put_image_to_window(ptr, win, game->mlx.sprites.header, i * IMG_W, 0);
+		mlx_put_image_to_window(ptr, win, game->mlx.sprites.header,
+			i * IMG_W, 0);
 		i++;
 	}
 	color = mlx_get_color_value(ptr, 0x00FFFFFF);
@@ -85,8 +86,8 @@ void	print_obj(t_game *game, t_pos pos)
 
 void	init_print(t_game *game)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 	void	*ptr;
 	void	*win;
 
@@ -100,7 +101,7 @@ void	init_print(t_game *game)
 		while (j < game->map_w)
 		{
 			mlx_put_image_to_window(ptr, win, game->mlx.sprites.grass,
-			j * IMG_W, (i + 1) * IMG_H);
+				j * IMG_W, (i + 1) * IMG_H);
 			++j;
 		}
 		++i;

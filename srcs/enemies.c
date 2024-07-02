@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enemies.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 08:49:55 by ele               #+#    #+#             */
-/*   Updated: 2024/04/09 20:57:18 by elena            ###   ########.fr       */
+/*   Updated: 2024/07/02 10:17:13 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,18 @@ void	print_enemies(t_game *game, t_pos pos)
 	}
 }
 
-/* https://old.chuidiang.org/clinux/funciones/rand.php -> srand() and rand() */
+static void	update_sprite(t_game *game, int m, t_pos aux, int i)
+{
+	if (!equal_pos(game->player.coord, game->enemies.enemies[i]))
+	{
+		if (m == 3)
+			game->mlx.sprites.enemy.curr = game->mlx.sprites.enemy.l;
+		else if (m == 4)
+			game->mlx.sprites.enemy.curr = game->mlx.sprites.enemy.r;
+		game->enemies.enemies[i] = aux;
+	}
+}
+
 /**
  * @details rand() % 5 generates a random number between 0 and 4.
  *  0 : dont move, 1: move up, 2: move down, 3: move left, 4: move right
@@ -78,13 +89,7 @@ void	move_enemies(t_game *game)
 		else if (m == 4)
 			aux.y++;
 		if (in_board(*game, aux) && game->map.map[aux.x][aux.y] == '0')
-			if (!equal_pos(game->player.coord, game->enemies.enemies[i])) {
-				if (m == 3)
-					game->mlx.sprites.enemy.curr = game->mlx.sprites.enemy.left;
-				else if (m == 4)
-					game->mlx.sprites.enemy.curr = game->mlx.sprites.enemy.right;
-				game->enemies.enemies[i] = aux;
-			}
+			update_sprite(game, m, aux, i);
 		i++;
 	}
 }

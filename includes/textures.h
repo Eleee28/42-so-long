@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:12:09 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/07/02 09:33:52 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 09:42:50 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@
 */
 typedef struct s_charac_sp
 {
-	void	*left;
-	void	*right;
+	void	*l;
+	void	*r;
 	void	*curr;
 }			t_charac_sp;
 

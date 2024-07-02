@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:49:12 by elena             #+#    #+#             */
-/*   Updated: 2024/07/02 09:01:57 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 09:52:54 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	open_window(t_game *game)
 
 int	play_game(t_game *game)
 {
-	if (/*game->render == 0 ||*/ !game->map.map)
+	if (!game->map.map)
 		return (0);
 	game->frames++;
 	if (game->player.life <= 0)
@@ -70,20 +70,18 @@ int	play_game(t_game *game)
 	return (0);
 }
 
-void    reset_game(t_game *game)
+void	reset_game(t_game *game)
 {
-    //game->render = 0;
-    ft_free_matrix(game->map.map);
-    game->map.map = ft_dup_matrix(game->map.init_map);
-    if (!game->map.map)
-        print_error("Error using malloc");
-    if (game->enemies.enemies)
-        free(game->enemies.enemies);
-    init_enemies(game, game->enemies.n_enemies);
-    game->frames = 0;
-    game->player.collec = 0;
-    game->player.life = 1;
-    game->player.coord = game->map.init_coord;
-    game->player.moves = 0;
-    //game->render = 1;
+	ft_free_matrix(game->map.map);
+	game->map.map = ft_dup_matrix(game->map.init_map);
+	if (!game->map.map)
+		print_error("Error using malloc");
+	if (game->enemies.enemies)
+		free(game->enemies.enemies);
+	init_enemies(game, game->enemies.n_enemies);
+	game->frames = 0;
+	game->player.collec = 0;
+	game->player.life = 1;
+	game->player.coord = game->map.init_coord;
+	game->player.moves = 0;
 }

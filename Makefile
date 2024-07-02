@@ -6,7 +6,7 @@
 #    By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 15:16:19 by elena             #+#    #+#              #
-#    Updated: 2024/07/02 22:11:12 by ejuarros         ###   ########.fr        #
+#    Updated: 2024/07/02 22:15:08 by ejuarros         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ REMOVE	:= rm -rf
 # Make flags
 MAKEFLAGS	+= -s
 
-INCLUDE = -Ilibrary
+INCLUDE	= -Ilibrary
 
 ################################################################################
 
@@ -114,7 +114,7 @@ OBJS_BONUS = $(SRCS_BONUS:%.c=$(BIN_DIR)/%.o)
 
 # Main rule
 all:	$(NAME) msg
-		@echo " "
+		@echo
 
 # So long compilation
 $(NAME): $(LIB) $(MLX) $(OBJS)

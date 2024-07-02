@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:49:35 by elena             #+#    #+#             */
-/*   Updated: 2024/07/02 14:42:29 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 22:04:08 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,7 +215,7 @@ void		reset_game(t_game *game);
  * 
  *  @param data mlx data structure
 */
-int	exit_window(t_game *game);
+int			exit_window(t_game *game);
 
 // !SECTION
 

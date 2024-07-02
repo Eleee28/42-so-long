@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:49:35 by elena             #+#    #+#             */
-/*   Updated: 2024/07/02 08:55:04 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 09:30:20 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ typedef struct s_game
 /*                 FUNTIONS DEFINITIONS                                       */
 /* ************************************************************************** */
 
-/* -------------- INITIALIZE -------------- */		
+// SECTION: Initialize
 
 /** @brief Initializes the list of enemies
  * 
@@ -70,9 +70,15 @@ void		init_enemies(t_game *game, int n);
 */
 void		get_game_info(t_game *game);
 
-/* -------------- PRINT -------------- */
+// !SECTION
 
-void	init_print(t_game *game);
+// SECTION: Print
+
+/** @brief Initialize screen print
+ * 
+ *  @param game game structure
+ */
+void		init_print(t_game *game);
 
 /** @brief Prints the objects of the game
  * 
@@ -116,7 +122,7 @@ void		print_end_screen(t_game *game, char *text);
  *  @param coll string to store the collectibles message
  *  @param mov string to store the moves message
 */
-void	create_messages(t_game *game, char **life, char **coll, char **mov);
+void		create_messages(t_game *game, char **life, char **coll, char **mov);
 
 /** @brief Puts the information on the screen
  * 
@@ -125,9 +131,11 @@ void	create_messages(t_game *game, char **life, char **coll, char **mov);
  *  @param collec string with the collectibles message
  *  @param move string with the moves message
 */
-void	put_info(t_game *game, char *life, char *collec, char *moves);
+void		put_info(t_game *game, char *life, char *collec, char *moves);
 
-/* -------------- MOVEMENT -------------- */
+// !SECTION
+
+// SECTION: Movement
 
 /** @brief Moves the player
  * 
@@ -149,7 +157,9 @@ void		move_player(t_game *game, int keycode);
 */
 void		move_enemies(t_game *game);
 
-/* -------------- GAME -------------- */
+// !SECTION
+
+// SECTION: Game
 
 /** @brief Handles the keyboard input
  * 
@@ -174,7 +184,9 @@ void		open_window(t_game *game);
 */
 int			play_game(t_game *game);
 
-/* -------------- UTILS -------------- */
+// !SECTION
+
+// SECTION: Utils
 
 /** @brief Checks whether a position is within map limits
  * 
@@ -192,7 +204,9 @@ int			in_board(t_game game, t_pos pos);
 */
 void		reset_game(t_game *game);
 
-/* -------------- SPRITES -------------- */
+// !SECTION
+
+// SECTION: Sprites
 
 /** @brief Initializes the sprites structure
  * 
@@ -202,22 +216,68 @@ void		reset_game(t_game *game);
 */
 t_sprites	init_sprites(t_game *game);
 
-void init_background_imgs(t_game *game, t_sprites *sprites);
+/** @brief Initializes the background images
+ * 
+ *  @param game game structure
+ *  @param sprites sprites structure
+*/
+void		init_background_imgs(t_game *game, t_sprites *sprites);
 
-void init_tree_sprites(t_game *game, t_sprites *sprites);
+/** @brief Initializes tree sprites
+ * 
+ *  @param game game structure
+ *  @param sprites sprites structure
+*/
+void		init_tree_sprites(t_game *game, t_sprites *sprites);
 
-void init_collec_sprites(t_game *game, t_sprites *sprites);
+/** @brief Initializes collectibles sprites
+ * 
+ *  @param game game structure
+ *  @param sprites sprites structure
+*/
+void		init_collec_sprites(t_game *game, t_sprites *sprites);
 
-void init_door_sprites(t_game *game, t_sprites *sprites);
+/** @brief Initializes door sprites
+ * 
+ *  @param game game structure
+ *  @param sprites sprites structure
+*/
+void		init_door_sprites(t_game *game, t_sprites *sprites);
 
-void init_enemy_sprites(t_game *game, t_sprites *sprites);
+/** @brief Initializes enemy sprites
+ * 
+ *  @param game game structure
+ *  @param sprites sprites structure
+*/
+void		init_enemy_sprites(t_game *game, t_sprites *sprites);
 
-void init_extra_sprites(t_game *game, t_sprites *sprites);
+/** @brief Initializes extra sprites
+ * 
+ *  @param game game structure
+ *  @param sprites sprites structure
+*/
+void		init_extra_sprites(t_game *game, t_sprites *sprites);
 
-void init_player_sprites(t_game *game, t_sprites *sprites);
+/** @brief Initializes player sprites
+ * 
+ *  @param game game structure
+ *  @param sprites sprites structure
+*/
+void		init_player_sprites(t_game *game, t_sprites *sprites);
 
-void    put_tree_sprite(t_game *game, t_pos pos);
+/** @brief Prints tree
+ * 
+ *  @param game game structure
+ *  @param pos position to print
+*/
+void		put_tree_sprite(t_game *game, t_pos pos);
 
-void    put_collec_sprite(t_game *game, t_pos pos);
+/** @brief Prints collectible
+ * 
+ *  @param game game structure
+ *  @param pos position to print
+*/
+void		put_collec_sprite(t_game *game, t_pos pos);
 
+// !SECTION
 #endif

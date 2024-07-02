@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_info.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 09:49:38 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/04/10 08:15:05 by elena            ###   ########.fr       */
+/*   Updated: 2024/07/02 09:32:02 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ typedef struct s_mlx
 /*                 FUNCTIONS DEFINITIONS                                      */
 /* ************************************************************************** */
 
+//FIXME - check where this comment belongs
 /** @brief Executes every time a key is pressed
  *  
  *  @details KEYSYm vs KEYCODE

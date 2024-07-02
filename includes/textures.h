@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:12:09 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/06/03 18:12:51 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/02 09:33:52 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 /* -------------- SCREEN DIMENSIONS -------------- */
 
-# define IMG_W 64 // 32
-# define IMG_H 64 // 32
+# define IMG_W 64
+# define IMG_H 64
 
 /* -------------- BACKGROUND IMGS -------------- */
 
@@ -29,43 +29,40 @@
 
 # define HEADER "textures_v2/xpm/background/header2.xpm"
 
-# define GRASS "textures_v2/xpm/background/grass.xpm" //"textures/background/grass_32.xpm"
+# define GRASS "textures_v2/xpm/background/grass.xpm"
 
 /* -------------- TREE SPRITES -------------- */
 
 //# define TREE "textures/tree.xpm"
-# define TREE1 "textures_v2/xpm/tree/tree1.xpm" // "textures/tree/t1.xpm"
-# define TREE2 "textures_v2/xpm/tree/tree2.xpm" // "textures/tree/t2.xpm"
-# define TREE3 "textures_v2/xpm/tree/tree3.xpm" // "textures/tree/t3.xpm"
-# define TREE4 "textures_v2/xpm/tree/tree4.xpm" // "textures/tree/t4.xpm"
+# define TREE1 "textures_v2/xpm/tree/tree1.xpm"
+# define TREE2 "textures_v2/xpm/tree/tree2.xpm"
+# define TREE3 "textures_v2/xpm/tree/tree3.xpm"
+# define TREE4 "textures_v2/xpm/tree/tree4.xpm"
 
 /* -------------- DOOR SPRITES -------------- */
 
-# define DOOR_CLOSE "textures_v2/xpm/door/door_closed.xpm" // "textures/door/door_close_32.xpm"
-# define DOOR_OPEN "textures_v2/xpm/door/door_open.xpm" // "textures/door/door_open_32.xpm"
+# define DOOR_CLOSE "textures_v2/xpm/door/door_closed.xpm"
+# define DOOR_OPEN "textures_v2/xpm/door/door_open.xpm"
 
 /* -------------- COLLECTIBLES SPRITES -------------- */
 
-# define COLL1 "textures_v2/xpm/collectible/star1.xpm" // "textures/collectible/star1.xpm"
-# define COLL2 "textures_v2/xpm/collectible/star2.xpm" // "textures/collectible/star2.xpm"
+# define COLL1 "textures_v2/xpm/collectible/star1.xpm"
+# define COLL2 "textures_v2/xpm/collectible/star2.xpm"
 
 /* -------------- PLAYER SPRITES -------------- */
 
-// # define KIRBY_NORMAL "textures/kirby_normal.xpm"
 # define KIRBY_LEFT "textures_v2/xpm/character/kirby_left.xpm"
 # define KIRBY_RIGHT "textures_v2/xpm/character/kirby_right.xpm"
 
 /* -------------- ENEMY SPRITES -------------- */
 
-// # define ENEMY_NORMAL "textures/exit.xpm"
 # define ENEMY_LEFT "textures_v2/xpm/character/enemy_left.xpm"
 # define ENEMY_RIGHT "textures_v2/xpm/character/enemy_right.xpm" 
 
 /* -------------- EXTRA SPRITES -------------- */
 
-# define LIFE "textures_v2/xpm/icons/life2.xpm" // "textures/extra/life_18.xpm"
+# define LIFE "textures_v2/xpm/icons/life2.xpm"
 # define STAR "textures_v2/xpm/icons/star_icon2.xpm"
-//# define COIN_OFF_PATH "textures/star_18.xpm"
 
 /* ************************************************************************** */
 /*                 DATA STRUCTURES DEFINITIONS                                */
@@ -103,24 +100,23 @@ typedef struct s_sprites
 	void		*blue;
 	void		*grass;
 	void		*header;
-	
+
 	void		*tree1;
 	void		*tree2;
 	void		*tree3;
 	void		*tree4;
-	
+
 	void		*collec1;
 	void		*collec2;
-	
+
 	void		*exit_open;
 	void		*exit_closed;
-	
+
 	t_charac_sp	player;
 	t_charac_sp	enemy;
-	
+
 	void		*life;
 	void		*star;
-
 }				t_sprites;
 
 #endif

@@ -6,7 +6,7 @@
 #    By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 15:16:19 by elena             #+#    #+#              #
-#    Updated: 2024/07/02 14:47:21 by ejuarros         ###   ########.fr        #
+#    Updated: 2024/07/02 22:11:12 by ejuarros         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ endif
 
 # Compilation variables
 CC		:= cc
-CFLAGS	:= -Wall -Werror -Wextra -g3
+CFLAGS	:= -Wall -Werror -Wextra
 
 # Remove flags
 REMOVE	:= rm -rf

@@ -15,7 +15,7 @@ To do so, I sill use the graphical library MiniLibX, which includes the basic ne
 
 ### Mandatory part
 
-The program has to take as parameter a map description file ending with the .ber extension. There are some map exmples in the [files folder](files/).
+The program has to take as parameter a map description file ending with the .ber extension. There are some map examples in the [maps folder](maps/).
 
 #### Game 
 

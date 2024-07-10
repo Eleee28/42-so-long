@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:49:12 by elena             #+#    #+#             */
-/*   Updated: 2024/07/02 12:53:31 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/10 08:34:02 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	open_window(t_game *game)
 	}
 	game->mlx.sprites = init_sprites(game);
 	init_print(game);
-	mlx_key_hook(game->mlx.mlx_data.mlx_win, handle_input, game);
+	mlx_hook(game->mlx.mlx_data.mlx_win, ON_KEYDOWN, 1L<<0,
+		handle_input, game);
 	mlx_hook(game->mlx.mlx_data.mlx_win, CLOSEBUTTON, CLOSEBUTTONMASK,
 		exit_window, game);
 	mlx_loop_hook(game->mlx.mlx_data.mlx_ptr, play_game, game);

@@ -6,7 +6,7 @@
 #    By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 15:16:19 by elena             #+#    #+#              #
-#    Updated: 2024/07/02 22:15:08 by ejuarros         ###   ########.fr        #
+#    Updated: 2024/07/10 08:30:28 by ejuarros         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -202,7 +202,12 @@ play: all
 	./$(NAME) maps/small_map.ber
 	./$(NAME) maps/big_map.ber
 	./$(NAME) maps/collec_after_exit.ber
-	./$(NAME) maps/with_enemies.ber
+
+play_bonus: bonus
+	./$(BONUS) maps/small_map.ber
+	./$(BONUS) maps/big_map.ber
+	./$(BONUS) maps/collec_after_exit.ber
+	./$(BONUS) maps/with_enemies.ber
 
 ################################################################################
 .PHONY: all bonus aux_clean clean fclean re msg  msg_bonus msg_clean play

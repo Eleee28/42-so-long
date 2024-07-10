@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 09:49:38 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/07/02 14:42:18 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/07/10 08:33:49 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@
 #  define KEY_R 114
 #  define CLOSEBUTTON 33
 #  define CLOSEBUTTONMASK 0
+
+#  define ON_KEYDOWN 2
 
 # endif
 

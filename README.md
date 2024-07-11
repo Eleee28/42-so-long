@@ -2,24 +2,29 @@
 
 Statement of the project (in [Spanish](es.subject.pdf) / [English](en.subject.pdf))
 
-## About the project
+## Introduction
 
-The goal of the project is to create a small 2D game. 
-<br>
-<br>
-The player's goal is to collect every collectible present on the map, then escape chosing the shortest possible route.
-In my case I used Kirby games as inspiration.
-<br>
-<br>
-To do so, I sill use the graphical library MiniLibX, which includes the basic necessary tools to open a window, create images and deal with keyboard and mouse events.
+This project involves creating a small 2D game where the player collects all collectibles on a map and then escapes through an exit, taking the shortest possible route. The game uses the MiniLibX graphical library to handle window creation, images, and keyboard/mouse events.
 
-### Mandatory part
+## Game Overview
 
-The program has to take as parameter a map description file ending with the .ber extension. There are some map examples in the [maps folder](maps/).
+In this game, inspired by Kirby games, the player navigates through a map, collecting items and avoiding enemies. The main objective is to gather all the collectibles and reach the exit.
 
-#### Game 
 
-Keyboard keys action's:
+## Mandatory part
+
+### Game Execution
+
+The program runs by taking a map description file as a parameter. The map file must have a `.ber` extension.
+
+Example:
+```sh
+./so_long maps/example_map.ber
+```
+
+### Controls
+
+The player cam move around the map using the following keys:
 
 | Key | Action |
 |  -  |    -   |
@@ -30,9 +35,9 @@ Keyboard keys action's:
 | R | Reset the game |
 | Esc | Close the window |
 
-#### Map
+### Map Specifications
 
-Characters to represent the map:
+The map is described using specific characters in the `.ber` file:
 
 | Char | Description |
 | - | - |
@@ -44,26 +49,56 @@ Characters to represent the map:
 | X | Enemy's starting position |
 
 
-The map must:
+**Map Requirements**
 
-- Contain **1 exit**, at least **1 collectible**, and **1 starting position** to be valid.
+- The map must contain exactly one exit ('**E**'), at least one collectible ('**C**'), and one starting position ('**P**').
 
-- Be rectangular.
+- The map must be rectangular.
 
-- Be surrounded by walls.
+- The map must be surrounded by walls ('**1**').
 
-- Have a valid path.
+- There must be a valid path from the player's starting position to all collectibles and to the exit.
 
-### Bonus part
+## Bonus part
 
-For the bonus part we have to develop extra features:
+The bonus part includes additional features to improve the gameplay experience:
 
-- Make the player lose when they touch an enemy.
+- **Enemies**: Introduce enemies ('**X**') that the player must avoid. Touching an enemy results in losing the game.
 
-- Add some sprite animation
+- **Animations**: Add sprite animations for the player and other game elements.
 
-- Display the movement count on screen.
+- **Movement Counter**: Display the number of moves the player has made on the screen.
 
-### MiniLibX information
+## MiniLibX information
 
-For some information on the mlx functions I used see: [doc](mlx_info.md).
+MiniLibX is a simple graphical library for rendering graphics, handling events, and managing windows in the X Windows System on Unix-like operating systems. It provides the basic necessary tools for creating 2D graphics.
+
+### Key Functions Used - Check!!
+
+- `mlx_init()` : Initializes the connection between software and display.
+
+- `mlx_new_window()` : Creates a new window.
+
+- `mlx_xpm_file_to_image()` : Creates a new image from an xpm file.
+
+- `mlx_put_image_to_window()` : Puts an image to the window.
+
+- `mlx_hook()` : Handles events.
+
+- `mlx_loop()` : Puts the program in a loop, waiting for events.
+
+For more detailed information on MiniLibX functions, refer to the [extended information](docs/mlx_info.md) or the [documentation](https://harm-smits.github.io/42docs/libs/minilibx).
+
+## Implementation Steps
+
+1. **Parse the Map File**: Read the .ber file and parse the map layout into a usable data structure.
+
+2. **Initialize MiniLibX**: Set up the MiniLibX library, create a window, and prepare images for the game elements.
+
+3. **Render the Map**: Draw the map on the window based on the parsed data.
+
+4. **Handle Player Input**: Implement keyboard event handlers to move the player character.
+
+5. **Game Logic**: Ensure the player can collect items, detect collision with walls, and determine if the player has reached the exit.
+
+6. **Bonus Features**: Add enemies, animations, and a movement counter for enhanced gameplay.

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_info.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ele <ele@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 10:17:43 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/07/02 14:38:36 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/09/24 13:36:48 by ele              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,13 @@ int	exit_window(t_game *game)
 	exit(0);
 }
 
+/**   
+ *  @details Executes every time a key is pressed
+ *  KEYSYm vs KEYCODE
+ *  A keycode is a hardware-specific code ent by the keyboard for a key press.
+ *  A keysym is the abstract representation of it, used in software to 
+ *  identify the key regardless of hardware.
+*/
 int	handle_input(int keycode, t_game *game)
 {
 	if (keycode == KEY_ESC)

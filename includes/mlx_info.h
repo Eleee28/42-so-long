@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_info.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ele <ele@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 09:49:38 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/07/10 08:33:53 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/09/24 13:27:49 by ele              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,18 +83,5 @@ typedef struct s_mlx
 	t_mlx_data	mlx_data;
 	t_sprites	sprites;
 }				t_mlx;
-
-/* ************************************************************************** */
-/*                 FUNCTIONS DEFINITIONS                                      */
-/* ************************************************************************** */
-
-//FIXME - check where this comment belongs
-/** @brief Executes every time a key is pressed
- *  
- *  @details KEYSYm vs KEYCODE
- *  A keycode is a hardware-specific code ent by the keyboard for a key press.
- *  A keysym is the abstract representation of it, used in software to 
- *  identify the key regardless of hardware.
-*/
 
 #endif

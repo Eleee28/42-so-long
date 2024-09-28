@@ -39,7 +39,7 @@ void	open_window(t_game *game)
 	}
 	game->mlx.sprites = init_sprites(game);
 	init_print(game);
-	mlx_hook(game->mlx.mlx_data.mlx_win, ON_KEYDOWN, 1L<<0,
+	mlx_hook(game->mlx.mlx_data.mlx_win, ON_KEYDOWN, 1L << 0,
 		handle_input, game);
 	mlx_hook(game->mlx.mlx_data.mlx_win, CLOSEBUTTON, CLOSEBUTTONMASK,
 		exit_window, game);

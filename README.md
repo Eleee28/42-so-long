@@ -10,6 +10,8 @@ This project involves creating a small 2D game where the player collects all col
 
 In this game, inspired by Kirby games, the player navigates through a map, collecting items and avoiding enemies. The main objective is to gather all the collectibles and reach the exit.
 
+resources/demo_so_long.mp4
+
 
 ## Mandatory part
 
@@ -87,7 +89,7 @@ MiniLibX is a simple graphical library for rendering graphics, handling events, 
 
 - `mlx_loop()` : Puts the program in a loop, waiting for events.
 
-For more detailed information on MiniLibX functions, refer to the [extended information](docs/mlx_info.md) or the [documentation](https://harm-smits.github.io/42docs/libs/minilibx).
+For more detailed information on MiniLibX functions, refer to the [extended information](resources/mlx_info.md) or the [documentation](https://harm-smits.github.io/42docs/libs/minilibx).
 
 ## Implementation Steps
 

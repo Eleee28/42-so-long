@@ -11,6 +11,7 @@ This project involves creating a small 2D game where the player collects all col
 In this game, inspired by Kirby games, the player navigates through a map, collecting items and avoiding enemies. The main objective is to gather all the collectibles and reach the exit.
 
 [Demo](resources/demo_so_long.mp4)
+![Demo]((https://github.com/user-attachments/assets/cb0fbbd3-1f6e-4937-a6c5-d7527cae697a)
 
 
 ## Mandatory part

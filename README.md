@@ -75,7 +75,7 @@ The bonus part includes additional features to improve the gameplay experience:
 
 MiniLibX is a simple graphical library for rendering graphics, handling events, and managing windows in the X Windows System on Unix-like operating systems. It provides the basic necessary tools for creating 2D graphics.
 
-### Key Functions Used - Check!!
+### Key Functions Used
 
 - `mlx_init()` : Initializes the connection between software and display.
 

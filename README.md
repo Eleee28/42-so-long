@@ -89,7 +89,7 @@ MiniLibX is a simple graphical library for rendering graphics, handling events, 
 
 - `mlx_loop()` : Puts the program in a loop, waiting for events.
 
-For more detailed information on MiniLibX functions, refer to the [extended information](resources/mlx_info.md) or the [documentation](https://harm-smits.github.io/42docs/libs/minilibx).
+For more detailed information on MiniLibX functions, refer to the [extended information](docs/mlx_info.md) or the [documentation](https://harm-smits.github.io/42docs/libs/minilibx).
 
 ## Implementation Steps
 

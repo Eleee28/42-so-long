@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/ayogun/42-project-badges/blob/main/badges/so_longm.png" alt="ready to help"/>
+  <img src="https://github.com/ayogun/42-project-badges/blob/main/badges/so_longm.png" alt="so long badge"/>
 </p>
 
 <h1 align="center">

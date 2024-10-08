@@ -1,4 +1,12 @@
-# 42_so_long
+<p align="center">
+  <img src="https://github.com/ayogun/42-project-badges/blob/main/badges/so_longm.png" alt="ready to help"/>
+</p>
+
+<h1 align="center">
+ 42 So Long
+</h1>
+
+<!-- # 42_so_long -->
 
 Statement of the project (in [Spanish](es.subject.pdf) / [English](en.subject.pdf))
 
@@ -10,8 +18,12 @@ This project involves creating a small 2D game where the player collects all col
 
 In this game, inspired by Kirby games, the player navigates through a map, collecting items and avoiding enemies. The main objective is to gather all the collectibles and reach the exit.
 
-![Demo](https://github.com/user-attachments/assets/cb0fbbd3-1f6e-4937-a6c5-d7527cae697a)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cb0fbbd3-1f6e-4937-a6c5-d7527cae697a">
+  
+</p>
 
+<!-- ![Demo](https://github.com/user-attachments/assets/cb0fbbd3-1f6e-4937-a6c5-d7527cae697a) -->
 
 ## Mandatory part
 
